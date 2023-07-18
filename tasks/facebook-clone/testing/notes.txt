@@ -1,0 +1,104 @@
+
+ 
+
+JavaScript - Part 1
+
+Variables
+  Data types, Variable Naming
+
+ 
+
+Objects
+  ES6 object syntax, and handling.
+
+ 
+
+Conditionals
+  if, else if, else, switch, and ternary syntax
+
+ 
+
+Functions
+  JavaScript function syntax, passing data to functions, the return keyword, ES6 arrow functions, and concise body syntax.
+
+ 
+
+Loops
+  how to use for and while loops to execute blocks of code multiple times.
+
+ 
+
+Data handing    (This we can move to Part 2)
+  Arrays, Object, LocalStore, Session, Cookies, IndexedDB
+
+ 
+
+Event Handling
+  Handling Click, Focus, Keypress, and other Events.  
+
+
+JavaScript - Part 2 - REST API Integration alone with Rails Learning, Exception Handling, gicen
+
+
+get preapre of topics
+JavaScript Fundamentals:
+
+Variables, data types, and operators.
+Control flow (if statements, loops).
+Functions and scope.
+Arrays and objects.
+DOM manipulation (accessing and modifying web page elements).
+ES6+ Features:
+
+Arrow functions.
+Template literals.
+Destructuring assignment.
+Classes and object-oriented programming.
+Promises and asynchronous programming.
+Working with the DOM:
+
+Event handling.
+Manipulating HTML and CSS.
+Traversing and modifying the DOM tree.
+Creating and removing elements dynamically.
+AJAX and API:
+
+Making HTTP requests using Fetch or XMLHttpRequest.
+Handling JSON data.
+Working with APIs to retrieve and manipulate data
+
+
+
+Variables, data types, and operators.
+
+let allows you to declare a block-scoped variable that can be reassigned later.
+var declares a function-scoped variable that can be reassigned. However, it has some hoisting behavior that can lead to unexpected results.
+const declares a block-scoped variable that cannot be reassigned after it's initialized. However, for complex data types like objects and arrays, the internal properties can still be modified.
+
+let age = 25; // Number
+let name = 'John'; // String
+let isStudent = true; // Boolean
+
+let sum = 5 + 3; // Arithmetic operator
+let isEqual = age === 25; // Comparison operator
+let isAdult = age >= 18 && isStudent === false; // Logical operator
+
+console.log(age, name, isStudent); // Output: 25, 'John', true
+console.log(sum, isEqual, isAdult); // Output: 8, true, false
+
+
+
+Control flow (if statements, loops)
+
+as all programming language have
+
+let age = 18;
+
+if (age >= 18) {
+  console.log('You are an adult.');
+} else {
+  console.log('You are not yet an adult.');
+}
+
+
+

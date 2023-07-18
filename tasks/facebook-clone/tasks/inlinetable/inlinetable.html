@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+
+</head>
+
+<body>
+    <div class="container mt-5">
+
+   
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h2 class="text-center p-5">Table</h2>
+        </div>
+
+        <div class="panel-body">
+            <div class="tbl_user_data border-2"></div>
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading mt-5"><b>HTML Table Edits/Upates</b> </div>
+      
+        <div class="panel-body">
+          
+          <p>All the changes will be displayed below</p>
+          <div class="post_msg"> </div>
+      
+        </div>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function ($) {
+            var ar = [{
+                fname: "test1",
+                lname: "test1",
+                email: "test1@example.com"
+            },
+            {
+                fname: "test2",
+                lname: "test2",
+                email: "test2@example.com"
+            },
+            {
+                fname: "test3",
+                lname: "test3",
+                email: "test3@example.com"
+            },
+            {
+                fname: "test4",
+                lname: "test4",
+                email: "test4@example.com"
+            },
+            ];
+
+            var id = function () {
+                var id_num = Math.random().toString(9).substr(2, 3);
+                return id_num;
+            }
+
+            // create table using  js 
+            var tbl = '<table class="table table-hover">';
+            tbl += '<thead>';
+            tbl += '<tr>';
+            tbl += '<th>Name</th>';
+            tbl += '<th>Last Name</th>';
+            tbl += '<th>Email</th>';
+            tbl += '<th>Options</th>';
+            tbl += '</tr>';
+            tbl += '</thead>';
+            tbl += '<tbody>';
+
+            for (var i = 0; i < ar.length; i++) {
+                var row_id = id();
+                tbl += '<tr row_id="' + row_id + '">';
+                tbl += '<td><div class="row_data" edit_type="click" col_name="fname">' + ar[i].fname + '</div></td>';
+                tbl += '<td><div class="row_data" edit_type="click" col_name="lname">' + ar[i].lname + '</div></td>';
+                tbl += '<td><div class="row_data" edit_type="click" col_name="email">' + ar[i].email + '</div></td>';
+
+
+                tbl += '<td>';
+                tbl += '<span class="btn_edit" > <a href="#" class="btn btn-link " row_id="' + row_id + '" > Edit</a> </span>';
+
+                //only show this button if edit button is clicked
+                tbl += '<span class="btn_save"> <a href="#" class="btn btn-link"  row_id="' + row_id + '"> Save</a> | </span>';
+                tbl += '<span class="btn_cancel"> <a href="#" class="btn btn-link" row_id="' + row_id + '"> Cancel</a> | </span>';
+            }
+
+            tbl += '</tbody>';
+            tbl += '</table>';
+            // display
+            // this is a function which use to print to html in which $for each
+            // .to find to find the whole documentin
+            $(document).find('.tbl_user_data').html(tbl);
+            $(document).find('.btn_save').hide();
+            $(document).find('.btn_cancel').hide();
+
+
+
+            $(document).on('click', '.row_data', function (event) {
+
+
+                // event.preventDefault(); 
+                if ($(this).attr('edit_type') == 'button') {
+                    return false;
+                }
+
+                // make editable
+
+                $(this).closest('div').attr('contenteditable', 'true');
+
+                //add bg css
+
+                $(this).addClass('bg-warning').css('padding', '5px');
+                $(this).focus();
+
+
+            })
+
+	//--->save single field data > start
+             $(document).on('focusout', '.row_data', function (event) {
+                event.preventDefault();
+                if ($(this).attr('edit_type') == 'button') {
+                    return false;
+                }
+                var row_id = $(this).closest('tr').attr('row_id');
+                var row_div = $(this).removeClass('bg-warning').css('padding', '');
+                var col_name = row_div.attr('col_name');
+                var col_val = row_div.html();
+
+                var arr = {};
+                arr[col_name] = col_val;
+                arr['row_id'] = row_id;
+
+                $('.post_msg').html('<pre class="bg-success">' + JSON.stringify(arr, null, 2) + '</pre>');
+            });
+
+                //--->button > edit > start	
+
+
+                $(document).on('click','.btn_edit',function(event){
+                    event.preventDefault();
+                    var tbl_row=$(this).closest('tr');
+                    var row_id=tbl_row.attr('row_id');
+                    tbl_row.find('.btn_save').show();
+                    tbl_row.find('.btn_cancel').show();
+
+                    //hide button
+
+                    tbl_row.find('.btn_edit').hide();
+                    tbl_row.find('.row_data')
+                    .attr('contenteditable','true')
+                    .attr('edit_type','button')
+                    .addClass('bg-warning')
+                    .css('padding','3px')
+
+
+                    tbl_row.find('.row_data').each(function(index,val)
+                    {
+                        $(this).attr('original_entry',$(this).html());
+                    })
+
+                });
+
+                // button>edit >end 
+
+                // save the whole row 
+
+                $(document).on('click','.btn_save',function(event){
+
+                    event.preventDefault();
+
+                    var tbl_row=$(this).closest('tr');
+                    var row_id=tbl_row.attr('row_id');
+                    tbl_row.find('.btn_save').hide();
+                    tbl_row.find('.btn_cancel').hide();
+                    tbl_row.find('.btn_edit').show();
+                    tbl_row.find('.row_data')
+                    .attr('edit_type','click')
+                    .removeClass('bg-warning')
+                    .css('padding','')
+
+
+                    var arr={};
+                    tbl_row.find('.row_data').each(function(index,val)
+                                        {
+                                            var col_name=$(this).attr('col_name');
+                                            var col_val=$(this).html();
+                                            arr[col_name]=col_val;
+                                            console.log(arr);
+                                        });
+                        // get row data 
+
+                        // use the arr object for call arr 
+                        $.extend(arr,{row_id:row_id});
+                        $('.post_msg').html( '<pre class="bg-success">'+JSON.stringify(arr, null, 2) +'</pre>')
+                        window.alert("Data Saved");
+
+
+                });
+
+
+
+        });
+
+        
+    </script>
+ 
+      
+</body>
+
+</html>
