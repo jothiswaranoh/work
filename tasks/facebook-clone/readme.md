@@ -15,19 +15,19 @@ Images/GIFs showcasing the different pages and features:
 
 **Login Page:**
 
-![Login Page](Images/login.png)
+![Login Page](images/login.png)
 
 **Feed Page:**
 
-![Feed Page](Images/feed.png)
+![Feed Page](images/feed.png)
 
 **Games Page:**
 
-![Games Page](Images/games.png)
+![Games Page](images/games.png)
 
 **request Page:**
 
-![request Page](Images/request.png)
+![request Page](images/request.png)
 
 ## Installation
 
