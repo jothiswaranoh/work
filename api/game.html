@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    h1 {
+      font-size: 24px;
+    }
+
+    #score {
+      font-weight: bold;
+    }
+
+    #s {
+      font-weight: bold;
+    }
+
+    #word {
+      font-size: 18px;
+    }
+
+    #myInput {
+      height: 50px;
+      width: 1000px;
+      background-color: black;
+      color: aliceblue;
+      font-size: 18px;
+      border: none;
+      outline: none;
+    }
+
+    #restartButton {
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Score:</h1>
+  <p id="score"></p>
+  <p id="s"></p>
+  <p id="word"></p>
+  <input id="myInput" type="text">
+  <br>
+  <div>
+    <input type="radio" name="payment" id="mode250" value="250">
+    <label for="mode250">Master</label>
+    <br>
+    <input type="radio" name="payment" id="mode500" value="500">
+    <label for="mode500">High</label>
+    <br>
+    <input type="radio" name="payment" id="mode750" value="750">
+    <label for="mode750">Medium</label>
+    <br>
+    <input type="radio" name="payment" id="mode1000" value="1000" checked>
+    <label for="mode1000">Low</label>
+  </div>
+  <br>
+  <button id="restartButton">Restart</button>
+
+  <script>
+    let n = 50;
+    let check = "";
+    let k = "";
+    let count = 0;
+    let x = 1000;
+
+    function generateRandomChar() {
+      if (n > 0) {
+        const randomCharCode = Math.floor(Math.random() * 26) + 65;
+        const randomChar = String.fromCharCode(randomCharCode);
+
+        console.log(randomChar);
+        check += randomChar;
+        document.getElementById("word").innerHTML += randomChar;
+        n--;
+        setTimeout(generateRandomChar, x);
+      }
+    }
+
+    generateRandomChar();
+
+    const input = document.getElementById('myInput');
+    const score = document.getElementById('score');
+    const s = document.getElementById('s');
+    const restartButton = document.getElementById('restartButton');
+
+    input.addEventListener('keypress', function(event) {
+      const keyPressed = event.key;
+      console.log('Key pressed:', keyPressed);
+      k = keyPressed.toUpperCase();
+
+      if (check.includes(k)) {
+        score.innerHTML = "Correct!";
+        count++;
+      } else {
+        score.innerHTML = "Incorrect!";
+        count--;
+        if(count<0)
+        {
+            count=0;
+        }
+      }
+
+      s.innerHTML = "Count: " + count;
+    });
+
+    const modes = document.getElementsByName("payment");
+    modes.forEach(function(mode) {
+      mode.addEventListener("change", function() {
+        x = parseInt(mode.value);
+      });
+    });
+
+    restartButton.addEventListener('click', function() {
+      n = 50;
+      check = "";
+      count = 0;
+      score.innerHTML = "";
+      s.innerHTML = "";
+      document.getElementById("word").innerHTML = "";
+      input.value = "";
+      generateRandomChar();
+    });
+
+  </script>
+</body>
+
+</html>
