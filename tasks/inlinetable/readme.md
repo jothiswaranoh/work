@@ -34,7 +34,7 @@ This is a simple HTML page that demonstrates editing and updating table data. Th
 
 ## Author
 
-Created by [Your Name]
+Created by Jothiswaran
 
 Feel free to explore and modify the code according to your requirements.
 
