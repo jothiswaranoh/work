@@ -31,7 +31,12 @@ This is a simple HTML page that demonstrates editing and updating table data. Th
 ### Data Update Confirmation
 
 ![Data Update Confirmation](images/completed.png)
+### Email Validate
 
+![Email Validate](images/emailvalidate.png)
+### Duplicate Email Validate
+
+![ Duplicate Email Validate](images/duplicate.png)
 ## Author
 
 Created by Jothiswaran
