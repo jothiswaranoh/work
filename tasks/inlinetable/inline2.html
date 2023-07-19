@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Editable Table with Email Validation and Duplicate Checker</title>
+</head>
+
+<body>
+  <h2>Table ready</h2>
+  <script type="text/javascript">
+    var ar = [{
+      fname: "test1",
+      lname: "test1",
+      email: "test1@example.com"
+    },
+    {
+      fname: "test2",
+      lname: "test2",
+      email: "test2@example.com"
+    },
+    {
+      fname: "test3",
+      lname: "test3",
+      email: "test3@example.com"
+    },
+    {
+      fname: "test4",
+      lname: "test4",
+      email: "test4@example.com"
+    }
+    ];
+
+    var uniqueEmails = new Set();
+
+    // Create the table element and table body
+    const tbl = document.createElement("table");
+    const tblBody = document.createElement("tbody");
+
+    // Create the table header row
+    const headerRow = document.createElement("tr");
+    const headers = ["Name", "Last Name", "Email"];
+    for (let i = 0; i < headers.length; i++) {
+      const headerCell = document.createElement("th");
+      const headerText = document.createTextNode(headers[i]);
+      headerCell.appendChild(headerText);
+      headerRow.appendChild(headerCell);
+    }
+    tblBody.appendChild(headerRow);
+
+    // loop the values in the array
+    for (let i = 0; i < ar.length; i++) {
+      const row = document.createElement("tr");
+
+      // Create the cells with editable content, email validation, and duplicate checking
+      const nameCell = document.createElement("td");
+      nameCell.setAttribute("contenteditable", "true");
+      nameCell.textContent = ar[i].fname;
+      row.appendChild(nameCell);
+
+      const lastNameCell = document.createElement("td");
+      lastNameCell.setAttribute("contenteditable", "true");
+      lastNameCell.textContent = ar[i].lname;
+      row.appendChild(lastNameCell);
+
+      const emailCell = document.createElement("td");
+      const emailInput = document.createElement("div");
+      emailInput.setAttribute("contenteditable", "true");
+      emailInput.textContent = ar[i].email;
+      emailInput.addEventListener("blur", validateEmail);//blur is an element loses focus like when out from focus
+      emailCell.appendChild(emailInput);
+      row.appendChild(emailCell);
+
+      // Add the row to the table body
+      tblBody.appendChild(row);
+
+      // Add the email to the uniqueEmails set
+      uniqueEmails.add(ar[i].email.toLowerCase());
+    }
+
+    // Add the table body to the table
+    tbl.appendChild(tblBody);
+
+    // Append the table to the body of the document
+    document.body.appendChild(tbl);
+
+    // Set the border attribute of the table to '2'
+    tbl.setAttribute("border", "2");
+
+    // Email validation function
+    function validateEmail(event) {
+      const emailInput = event.target;
+      const email = emailInput.textContent.trim();
+
+      // Regular expression for email validation
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+      if (email === "" || emailRegex.test(email)) {
+        // Valid email
+        emailInput.style.backgroundColor = "";
+
+        // Check for duplicate emails
+        const index = Array.from(emailInput.parentNode.parentNode.children).indexOf(emailInput.parentNode);
+        const previousEmail = ar[index].email.toLowerCase();
+
+        if (uniqueEmails.has(email.toLowerCase())) {
+          emailInput.style.backgroundColor = "rgba(255, 0, 0, 0.2)";
+        } else {
+          uniqueEmails.delete(previousEmail);
+          uniqueEmails.add(email.toLowerCase());
+          ar[index].email = email;
+          //  for testing purposes
+        }
+      } else {
+        // Invalid email
+        emailInput.style.backgroundColor = "rgba(255, 0, 0, 0.2)";
+      }
+    }
+
+  </script>
+</body>
+
+</html>
