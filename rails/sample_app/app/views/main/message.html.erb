@@ -1,0 +1,2066 @@
+<html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- font are some  -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer">
+  <!-- bootstrap  -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  <!-- css  -->
+
+  <link rel="stylesheet" href="./style.css">
+  <title>Flexbook</title>
+</head>
+
+<body class="bg-grey">
+  <!-- Appbar  -->
+  <div class="bg-white d-flex align-items-center fixed-top shadow" style="min-height: 50px;z-index:5">
+  <div class="container-fluid">
+      <div class="row align-items-center">
+          <div class="col d-flex align-items-center">
+              <!-- logo  -->
+              
+              <i class="fa-brands fa-facebook" style="color: #095ef1; font-size: 3rem;"></i>
+              <!-- search bar  -->
+              <div class="input-group ms-2">
+                  <!-- Mobile  -->
+
+                  <span class="input-group-prepend  d-lg-none" data-bs-toggle="dropdown" aria-expanded="false" type="button"> 
+                     <div class="input-group-text bg-gray border-0 rounded-circle " style="min-height: 40px">
+                         <i class="fas fa-search me-2 text-muted"></i>
+                         
+                     </div>
+                 </span>
+                  <!-- desktop  -->
+                  <span class="input-group-prepend d-none d-lg-block" data-bs-toggle="dropdown" aria-expanded="false" type="button"> 
+                      <div class="input-group-text bg-gray border-0 rounded-pill " style="min-height: 40px;min-width: 230px;">
+                          <i class="fas fa-search me-2 text-muted"></i>
+                          <p class="m-0 fs-7 text-muted">Search Flexbook</p>
+                      </div>
+                  </span>
+                   <!-- search drop  down  -->
+
+                   <div class="dropdown">
+                    
+                      <ul class="dropdown-menu border-0 shadow p-3 overflow-auto" style="width: 20em; max-height: 600px;">
+                        <!-- <li><a class="dropdown-item" href="#">Action</a></li>
+                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                        <li><a class="dropdown-item" href="#">Something else here</a></li> -->
+                        <li>
+                          <input type="text" class="rounded-pill border-0 bg-gray dropdown-item" placeholder="Search Flexbook" autofocus="">
+                        </li>
+                        <!-- result  -->
+                        <!-- result 1  -->
+                        <li class="my-4">
+
+                          <div class="alert fade show dropdown-item p-1 m-0 d-flex align-items-center justify-content-between" role="alert">
+                              <div class="d-flex align-items-center">
+                                  <img src="https://source.unsplash.com/1" alt="avtor" class="rounded-circle me-2" style="width: 35px;height: 35px;object-fit: cover;">
+                                  <p class="m-0">Lorem ipsum,ditiis. </p>
+                              </div>
+                                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                            </div>
+                        </li>
+                        <!-- result 2  -->
+                        <li class="my-4">
+
+                          <div class="alert fade show dropdown-item p-1 m-0 d-flex align-items-center justify-content-between" role="alert">
+                              <div class="d-flex align-items-center">
+                                  <img src="https://source.unsplash.com/3" alt="avtor" class="rounded-circle me-2" style="width: 35px;height: 35px;object-fit: cover;">
+                                  <p class="m-0">Lorem ipsum,ditiis. </p>
+                              </div>
+                                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                            </div>
+                        </li>
+                        <!-- result 3 
+                       -->
+                       <li class="my-4">
+
+                          <div class="alert fade show dropdown-item p-1 m-0 d-flex align-items-center justify-content-between" role="alert">
+                              <div class="d-flex align-items-center">
+                                  <img src="https://source.unsplash.com/2" alt="avtor" class="rounded-circle me-2" style="width: 35px;height: 35px;object-fit: cover;">
+                                  <p class="m-0">Lorem ipsum,ditiis. </p>
+                              </div>
+                                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                            </div>
+                        </li>
+                      </ul>
+                    </div>
+              </div>
+          </div>
+          
+            <!-- nav  -->
+               <div class="col d-none d-xl-flex justify-content-center">
+          <!-- home -->
+          <div class="mx-4 nav__btn">
+            <button type="button" onclick="window.location.href='feed.html'" class="btn px-4">
+              <i class="fas fa-home text-muted fs-4"></i>
+            </button>
+          </div>
+          <!-- market -->
+          <div class="mx-4 nav__btn">
+            <button type="button" onclick="window.location.href='video.html'" class="btn px-4 ">
+              <i class="fas fa-store text-muted fs-4"></i>
+            </button>
+          </div>
+          <!-- group -->
+          <div class="mx-4 nav__btn nav__btn-active">
+            <button class="btn px-4" type="button" onclick="window.location.href='message.html'">
+              <i type="button" class="position-relative fas fa-users text-muted fs-4">
+                <span class="
+                    position-absolute
+                    top-0
+                    start-100
+                    translate-middle
+                    badge
+                    rounded-pill
+                    bg-danger
+                  " style="font-size: 0.5rem">
+                  1
+                  <span class="visually-hidden"></span>
+                </span>
+              </i>
+            </button>
+          </div>
+          <!-- gaming -->
+          <div class="mx-4 nav__btn">
+            <button class="btn px-4" type="button" onclick="window.location.href='games.html'">
+              <i class="fas fa-gamepad text-muted fs-4"></i>
+            </button>
+          </div>
+        </div>
+      <div class="col d-flex align-items-center justify-content-end">
+          <!-- avator  -->
+          <div class="d-none d-xl-flex align-items-center justify-content-center">
+
+
+              <img src="https://source.unsplash.com/collection/happy-people" class="rounded-circle me-2" style="width: 38px;height: 38px;object-fit: cover;" alt="avator">
+              <p class="m-0">Jothis</p>
+          </div>
+
+          <!-- menu  -->
+          <div class="d-flex align-items-center justify-content-center p-1 mx-2 bg-gray rounded-circle" style="width: 38px; height: 38px; object-fit: cover;" data-bs-toggle="dropdown" aria-expanded="false" type="button">
+              <i class="fas fa-ellipsis-h text-muted fs-4"></i>
+
+          </div>
+      
+            
+          <ul class="dropdown-menu p-3 shadow border-0 overflow-auto" style="width: 23em; max-height: 600px;">
+              <!-- menuinside -->
+              <div>
+
+                  <!-- header  -->
+                  <li class="p-1 mx-2">
+                      <h2>Menu</h2>
+                  </li>
+                  <li class="p-1">
+                      <div class="input-group-text bg-gray border-0 rounded-pill" style="min-height: 40px;min-width: 230px">
+                  <i class="fas fa-search me-2 text-muted">  </i>
+                      <input type="text" class="form-control rounded-pill border-0 bg-gray" placeholder="Search Menu">
+                
+                  </div>
+                  </li>
+                  <h4 class="m-2">Social</h4>
+                  <!-- s1 -->
+                  <li class="my-2 p-1">
+                      <a href="#" class="text-decoration-none text-dark d-flex align-items-center">
+                      <div class="p-2">
+                          <img src="https://static.xx.fbcdn.net/rsrc.php/v3/yj/r/Y7r38CcFEw5.png" alt="icon form fb" class="rounded-circle" style="width: 48px; height: 48px;object-fit: cover;">
+                      </div>   
+                      <div>
+                          <p class="m-0">Campus</p>
+                          <span class="fs-7 text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus, ullam?</span>
+                      </div> 
+                      </a>
+                  </li>
+                  <li class="my-2 p-1">
+                      <a href="#" class="text-decoration-none text-dark d-flex align-items-center">
+                      <div class="p-2">
+                          <img src="https://static.xx.fbcdn.net/rsrc.php/v3/yj/r/Y7r38CcFEw5.png" alt="icon form fb" class="rounded-circle" style="width: 48px; height: 48px;object-fit: cover;">
+                      </div>   
+                      <div>
+                          <p class="m-0">Campus</p>
+                          <span class="fs-7 text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus, ullam?</span>
+                      </div> 
+                      </a>
+                  </li>
+                  <li class="my-2 p-1">
+                      <a href="#" class="text-decoration-none text-dark d-flex align-items-center">
+                      <div class="p-2">
+                          <img src="https://static.xx.fbcdn.net/rsrc.php/v3/yj/r/Y7r38CcFEw5.png" alt="icon form fb" class="rounded-circle" style="width: 48px; height: 48px;object-fit: cover;">
+                      </div>   
+                      <div>
+                          
+                          <p class="m-0">Campus</p>
+                          <span class="fs-7 text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus, ullam?</span>
+                      </div> 
+                      </a>
+                  </li>
+                  <li class="my-2 p-1">
+                      <a href="#" class="text-decoration-none text-dark d-flex align-items-center">
+                      <div class="p-2">
+                          <img src="https://static.xx.fbcdn.net/rsrc.php/v3/yj/r/Y7r38CcFEw5.png" alt="icon form fb" class="rounded-circle" style="width: 48px; height: 48px;object-fit: cover;">
+                      </div>   
+                      <div>
+                          <p class="m-0">Campus</p>
+                          <span class="fs-7 text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus, ullam?</span>
+                      </div> 
+                      </a>
+                  </li>
+                  <li class="my-2 p-1">
+                      <a href="#" class="text-decoration-none text-dark d-flex align-items-center">
+                      <div class="p-2">
+                          <img src="https://static.xx.fbcdn.net/rsrc.php/v3/yj/r/Y7r38CcFEw5.png" alt="icon form fb" class="rounded-circle" style="width: 48px; height: 48px;object-fit: cover;">
+                      </div>   
+                      <div>
+                          <p class="m-0">Campus</p>
+                          <span class="fs-7 text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus, ullam?</span>
+                      </div> 
+                      </a>
+                  </li>
+                  <li class="my-2 p-1">
+                      <a href="#" class="text-decoration-none text-dark d-flex align-items-center">
+                      <div class="p-2">
+                          <img src="https://static.xx.fbcdn.net/rsrc.php/v3/yj/r/Y7r38CcFEw5.png" alt="icon form fb" class="rounded-circle" style="width: 48px; height: 48px;object-fit: cover;"> 
+                      </div>   
+                      <div>
+                          <p class="m-0">Campus</p>
+                          <span class="fs-7 text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus, ullam?</span>
+                      </div> 
+                      </a>
+                  </li>
+                  <li class="my-2 p-1">
+                      <a href="#" class="text-decoration-none text-dark d-flex align-items-center">
+                      <div class="p-2">
+                          <img src="https://static.xx.fbcdn.net/rsrc.php/v3/yj/r/Y7r38CcFEw5.png" alt="icon form fb" class="rounded-circle" style="width: 48px; height: 48px;object-fit: cover;">
+                      </div>   
+                      <div>
+                          <p class="m-0">Campus</p>
+                          <span class="fs-7 text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus, ullam?</span>
+                      </div> 
+                      </a>
+                  </li>
+                  <!-- search -->
+                  <!-- social -->
+                  <!-- enterminetes -->
+                  <hr> 
+                  <h4 class="m-2">Entermint</h4>
+                  <!-- s1 -->
+                  <li class="my-2 p-1">
+                      <a href="#" class="text-decoration-none text-dark d-flex align-items-center">
+                      <div class="p-2">
+                          <img src="https://static.xx.fbcdn.net/rsrc.php/v3/yj/r/Y7r38CcFEw5.png" alt="icon form fb" class="rounded-circle" style="width: 48px; height: 48px;object-fit: cover;">
+                      </div>   
+                      <div>
+                          <p class="m-0">Campus</p>
+                          <span class="fs-7 text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus, ullam?</span>
+                      </div> 
+                      </a>
+                  </li>
+                  <li class="my-2 p-1">
+                      <a href="#" class="text-decoration-none text-dark d-flex align-items-center">
+                      <div class="p-2">
+                          <img src="https://static.xx.fbcdn.net/rsrc.php/v3/yj/r/Y7r38CcFEw5.png" alt="icon form fb" class="rounded-circle" style="width: 48px; height: 48px;object-fit: cover;">
+                      </div>   
+                      <div>
+                          <p class="m-0">Campus</p>
+                          <span class="fs-7 text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus, ullam?</span>
+                      </div> 
+                      </a>
+                  </li>
+                  <li class="my-2 p-1">
+                      <a href="#" class="text-decoration-none text-dark d-flex align-items-center">
+                      <div class="p-2">
+                          <img src="https://static.xx.fbcdn.net/rsrc.php/v3/yj/r/Y7r38CcFEw5.png" alt="icon form fb" class="rounded-circle" style="width: 48px; height: 48px;object-fit: cover;">
+                      </div>   
+                      <div>
+                          <p class="m-0">Campus</p>
+                          <span class="fs-7 text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus, ullam?</span>
+                      </div> 
+                      </a>
+                  </li>
+              </div>
+               <!-- create  -->
+
+
+               <div>
+                  <!-- header  -->
+
+                  <li class="p-1 mx-2">
+                      <h2>Create</h2>
+                  </li>
+                  <li class="my-2 p-1">
+                      <a href="#" class="text-decoration-none text-dark d-flex align-items-center">
+                          <div class="d-flex align-items-center justify-content-center rounded-circle 
+                          bg-gray p-1 me-3" style="width: 38px;height: 38px;">
+                              <i class="fas fa-edit"></i>
+                          </div>     
+                          <div>
+                          <p class="m-0">Post</p>
+                      </div>
+
+                      </a>
+                  </li>
+                  <li class="my-2 p-1">
+                      <a href="#" class="text-decoration-none text-dark d-flex align-items-center">
+                          <div class="d-flex align-items-center justify-content-center rounded-circle 
+                          bg-gray p-1 me-3" style="width: 38px;height: 38px;">
+                              <i class="fas fa-edit"></i>
+                          </div>     
+                          <div>
+                          <p class="m-0">Post</p>
+                      </div>
+
+                      </a>
+                  </li>
+                  <li class="my-2 p-1">
+                      <a href="#" class="text-decoration-none text-dark d-flex align-items-center">
+                          <div class="d-flex align-items-center justify-content-center rounded-circle 
+                          bg-gray p-1 me-3" style="width: 38px;height: 38px;">
+                              <i class="fas fa-edit"></i>
+                          </div>     
+                          <div>
+                          <p class="m-0">Post</p>
+                      </div>
+
+                      </a>
+                  </li>
+                  <li class="my-2 p-1">
+                      <a href="#" class="text-decoration-none text-dark d-flex align-items-center">
+                          <div class="d-flex align-items-center justify-content-center rounded-circle 
+                          bg-gray p-1 me-3" style="width: 38px;height: 38px;">
+                              <i class="fas fa-edit"></i>
+                          </div>     
+                          <div>
+                          <p class="m-0">Post</p>
+                      </div>
+
+                      </a>
+                  </li>
+                  <li class="my-2 p-1">
+                      <a href="#" class="text-decoration-none text-dark d-flex align-items-center">
+                          <div class="d-flex align-items-center justify-content-center rounded-circle 
+                          bg-gray p-1 me-3" style="width: 38px;height: 38px;">
+                              <i class="fas fa-edit"></i>
+                          </div>     
+                          <div>
+                          <p class="m-0">Post</p>
+                      </div>
+
+                      </a>
+                  </li><li class="my-2 p-1">
+                      <a href="#" class="text-decoration-none text-dark d-flex align-items-center">
+                          <div class="d-flex align-items-center justify-content-center rounded-circle 
+                          bg-gray p-1 me-3" style="width: 38px;height: 38px;">
+                              <i class="fas fa-edit"></i>
+                          </div>     
+                          <div>
+                          <p class="m-0">Post</p>
+                      </div>
+
+                      </a>
+                  </li><li class="my-2 p-1">
+                      <a href="#" class="text-decoration-none text-dark d-flex align-items-center">
+                          <div class="d-flex align-items-center justify-content-center rounded-circle 
+                          bg-gray p-1 me-3" style="width: 38px;height: 38px;">
+                              <i class="fas fa-edit"></i>
+                          </div>     
+                          <div>
+                          <p class="m-0">Post</p>
+                      </div>
+
+                      </a>
+                  </li><li class="my-2 p-1">
+                      <a href="#" class="text-decoration-none text-dark d-flex align-items-center">
+                          <div class="d-flex align-items-center justify-content-center rounded-circle 
+                          bg-gray p-1 me-3" style="width: 38px;height: 38px;">
+                              <i class="fas fa-edit"></i>
+                          </div>     
+                          <div>
+                          <p class="m-0">Post</p>
+                      </div>
+
+                      </a>
+                  </li><li class="my-2 p-1">
+                      <a href="#" class="text-decoration-none text-dark d-flex align-items-center">
+                          <div class="d-flex align-items-center justify-content-center rounded-circle 
+                          bg-gray p-1 me-3" style="width: 38px;height: 38px;">
+                              <i class="fas fa-edit"></i>
+                          </div>     
+                          <div>
+                          <p class="m-0">Post</p>
+                      </div>
+
+                      </a>
+                  </li>
+              </div>
+          </ul>
+
+
+             
+       
+          <!-- chat  -->
+          <div class="d-flex align-items-center justify-content-center p-1 mx-2 bg-gray rounded-circle" style="width: 38px; height: 38px; object-fit: cover;" data-bs-toggle="dropdown" aria-expanded="false" type="button" data-bs-auto-close="outside">
+              <i class="fas fa-comment text-muted fs-4"></i>
+
+          </div>
+          <!-- chat dd  -->
+          <ul class="dropdown-menu p-3 shadow border-0 overflow-auto" style="width: 23em; max-height: 600px;">
+              <!-- header -->
+              <li class="p-1">
+                  <div class="d-flex justify-content-between">
+                      <h2>Message</h2>
+                      <!-- icons  -->
+                      <div>
+                          <!-- setiings -->
+                          
+                          <i class="fas fa-ellipsis-h text-muted mx-2" type="button" data-bs-toggle="dropdown"></i>
+                          
+                          <ul class="dropdown-menu shadow" style="width: 18em;">
+                              <!-- titile -->
+                              <div class="p-2">
+                                  <h5>Chat Settings</h5>
+                                  <span class="text-muted fs-7">Lorem, ipsum dolor sit amet consectetur adipisicing elit.</span>
+                              </div>
+                              <li>
+                                  <div class="dropdown-item d-flex align-items-center justify-content-between">
+                                      <!-- icon  -->
+                                      <div class="d-flex align-items-center">
+                                          <i class="fas fa-phone-alt me-3"></i>
+                                          <p class="m-0">Incoming calls</p>
+                                      </div>
+                                      <div class="form-check form-switch m-0">
+                                          <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked="">
+                                          <label class="form-check-label" for="flexSwitchCheckChecked"></label>
+                                        </div>
+
+                                  </div>
+
+                              </li>
+                              <li>
+                                  <div class="dropdown-item d-flex align-items-center justify-content-between">
+                                      <!-- icon  -->
+                                      <div class="d-flex align-items-center">
+                                          <i class="fas fa-phone-alt me-3"></i>
+                                          <p class="m-0">Incoming calls</p>
+                                      </div>
+                                      <div class="form-check form-switch m-0">
+                                          <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked="">
+                                          <label class="form-check-label" for="flexSwitchCheckChecked"></label>
+                                        </div>
+
+                                  </div>
+
+                              </li>
+                              <li>
+                                  <div class="dropdown-item d-flex align-items-center justify-content-between">
+                                      <!-- icon  -->
+                                      <div class="d-flex align-items-center">
+                                          <i class="fas fa-phone-alt me-3"></i>
+                                          <p class="m-0">Incoming calls</p>
+                                      </div>
+                                      <div class="form-check form-switch m-0">
+                                          <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked="">
+                                          <label class="form-check-label" for="flexSwitchCheckChecked"></label>
+                                        </div>
+
+                                  </div>
+                                  <span class="ms-5 text-muted fs-7">Lorem ipsum dolor sit.</span>
+
+                              </li>
+                              <li>
+                                  <div class="dropdown-item d-flex align-items-center justify-content-between">
+                                      <!-- icon  -->
+                                      <div class="d-flex align-items-center">
+                                          <i class="fas fa-phone-alt me-3"></i>
+                                          <p class="m-0">Incoming calls</p>
+                                      </div>
+                                      <div class="form-check form-switch m-0">
+                                          <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked="">
+                                          <label class="form-check-label" for="flexSwitchCheckChecked"></label>
+                                        </div>
+
+                                  </div>
+                                  <span class="ms-5 text-muted fs-7">Lorem ipsum dolor sit.</span>
+
+                              </li>
+
+                          </ul>
+                          <!-- expand  -->
+                          <i class="fas fa-expand-arrows-alt text-muted mx-2" type="button"></i>
+
+
+                          <!-- new mesage  -->
+                          <i class="fas fa-edit text-muted mx-2" type="button" data-bs-toggle="modal" data-bs-target="#newcheck"></i>
+
+                         
+                          </div></div></li><li class="p-1">
+                              <div class="input-group-text bg-gray border-0 rounded-pill" style="min-height: 40px;min-width: 230px">
+                          <i class="fas fa-search me-2 text-muted">  </i>
+                              <input type="text" class="form-control rounded-pill border-0 bg-gray" placeholder="Search Messanger">
+                        
+                          </div>
+                          </li>
+                      
+                          <li class="my-2 p-1" data-bs-toggle="modal" data-bs-target="#singlechat" type="button">
+                              <div class="d-flex align-items-center justify-content-between">
+              
+                                  <!-- big avator -->
+                                  <div class="d-flex align-items-center justify-content-evenly">
+              
+                                      <div class="p-2">
+              
+                                     
+                                      <!-- avator -->
+                                      <img src="https://source.unsplash.com/random/1" alt="avtor" class="rounded-circle" style="width: 58px;height: 58px; object-fit: cover;">
+              
+                                  </div>
+                                  <div>
+                                      <p class="fs-7 m-0">Gokul</p>
+                                      <span class="fs-7 text-muted">Lorem ipsum dolor  •7d</span>
+                                  </div>
+                                  </div>
+                                  <!-- small avator -->
+
+                                  <div class="p-2">
+                                      <img src="https://source.unsplash.com/random/1" alt="avator" class="rounded-circle" style="width: 15px;height: 15px;">
+                                  </div>
+                              </div>
+                           </li>
+                           <li class="my-2 p-1" data-bs-toggle="modal" data-bs-target="#singlechat" type="button">
+                              <div class="d-flex align-items-center justify-content-between">
+              
+                                  <!-- big avator -->
+                                  <div class="d-flex align-items-center justify-content-evenly">
+              
+                                      <div class="p-2">
+              
+                                     
+                                      <!-- avator -->
+                                      <img src="https://source.unsplash.com/random/1" alt="avtor" class="rounded-circle" style="width: 58px;height: 58px; object-fit: cover;">
+              
+                                  </div>
+                                  <div>
+                                      <p class="fs-7 m-0">Gokul</p>
+                                      <span class="fs-7 text-muted">Lorem ipsum dolor  •7d</span>
+                                  </div>
+                                  </div>
+                                  <!-- small avator -->
+
+                                  <div class="p-2">
+                                      <img src="https://source.unsplash.com/random/1" alt="avator" class="rounded-circle" style="width: 15px;height: 15px;">
+                                  </div>
+                              </div>
+                           </li>
+                           <li class="my-2 p-1" data-bs-toggle="modal" data-bs-target="#singlechat" type="button">
+                              <div class="d-flex align-items-center justify-content-between">
+              
+                                  <!-- big avator -->
+                                  <div class="d-flex align-items-center justify-content-evenly">
+              
+                                      <div class="p-2">
+              
+                                     
+                                      <!-- avator -->
+                                      <img src="https://source.unsplash.com/random/1" alt="avtor" class="rounded-circle" style="width: 58px;height: 58px; object-fit: cover;">
+              
+                                  </div>
+                                  <div>
+                                      <p class="fs-7 m-0">Gokul</p>
+                                      <span class="fs-7 text-muted">Lorem ipsum dolor  •7d</span>
+                                  </div>
+                                  </div>
+                                  <!-- small avator -->
+
+                                  <div class="p-2">
+                                      <img src="https://source.unsplash.com/random/1" alt="avator" class="rounded-circle" style="width: 15px;height: 15px;">
+                                  </div>
+                              </div>
+                           </li>
+                           <li class="my-2 p-1" data-bs-toggle="modal" data-bs-target="#singlechat" type="button">
+                              <div class="d-flex align-items-center justify-content-between">
+              
+                                  <!-- big avator -->
+                                  <div class="d-flex align-items-center justify-content-evenly">
+              
+                                      <div class="p-2">
+              
+                                     
+                                      <!-- avator -->
+                                      <img src="https://source.unsplash.com/random/1" alt="avtor" class="rounded-circle" style="width: 58px;height: 58px; object-fit: cover;">
+              
+                                  </div>
+                                  <div>
+                                      <p class="fs-7 m-0">Gokul</p>
+                                      <span class="fs-7 text-muted">Lorem ipsum dolor  •7d</span>
+                                  </div>
+                                  </div>
+                                  <!-- small avator -->
+
+                                  <div class="p-2">
+                                      <img src="https://source.unsplash.com/random/1" alt="avator" class="rounded-circle" style="width: 15px;height: 15px;">
+                                  </div>
+                              </div>
+                           </li>
+                           <li class="my-2 p-1" data-bs-toggle="modal" data-bs-target="#singlechat" type="button">
+                              <div class="d-flex align-items-center justify-content-between">
+              
+                                  <!-- big avator -->
+                                  <div class="d-flex align-items-center justify-content-evenly">
+              
+                                      <div class="p-2">
+              
+                                     
+                                      <!-- avator -->
+                                      <img src="https://source.unsplash.com/random/1" alt="avtor" class="rounded-circle" style="width: 58px;height: 58px; object-fit: cover;">
+              
+                                  </div>
+                                  <div>
+                                      <p class="fs-7 m-0">Gokul</p>
+                                      <span class="fs-7 text-muted">Lorem ipsum dolor  •7d</span>
+                                  </div>
+                                  </div>
+                                  <!-- small avator -->
+
+                                  <div class="p-2">
+                                      <img src="https://source.unsplash.com/random/1" alt="avator" class="rounded-circle" style="width: 15px;height: 15px;">
+                                  </div>
+                              </div>
+                           </li>
+                           <li class="my-2 p-1" data-bs-toggle="modal" data-bs-target="#singlechat" type="button">
+                              <div class="d-flex align-items-center justify-content-between">
+              
+                                  <!-- big avator -->
+                                  <div class="d-flex align-items-center justify-content-evenly">
+              
+                                      <div class="p-2">
+              
+                                     
+                                      <!-- avator -->
+                                      <img src="https://source.unsplash.com/random/1" alt="avtor" class="rounded-circle" style="width: 58px;height: 58px; object-fit: cover;">
+              
+                                  </div>
+                                  <div>
+                                      <p class="fs-7 m-0">Gokul</p>
+                                      <span class="fs-7 text-muted">Lorem ipsum dolor  •7d</span>
+                                  </div>
+                                  </div>
+                                  <!-- small avator -->
+
+                                  <div class="p-2">
+                                      <img src="https://source.unsplash.com/random/1" alt="avator" class="rounded-circle" style="width: 15px;height: 15px;">
+                                  </div>
+                              </div>
+                           </li>
+                           <li class="my-2 p-1" data-bs-toggle="modal" data-bs-target="#singlechat" type="button">
+                              <div class="d-flex align-items-center justify-content-between">
+              
+                                  <!-- big avator -->
+                                  <div class="d-flex align-items-center justify-content-evenly">
+              
+                                      <div class="p-2">
+              
+                                     
+                                      <!-- avator -->
+                                      <img src="https://source.unsplash.com/random/1" alt="avtor" class="rounded-circle" style="width: 58px;height: 58px; object-fit: cover;">
+              
+                                  </div>
+                                  <div>
+                                      <p class="fs-7 m-0">Gokul</p>
+                                      <span class="fs-7 text-muted">Lorem ipsum dolor  •7d</span>
+                                  </div>
+                                  </div>
+                                  <!-- small avator -->
+
+                                  <div class="p-2">
+                                      <img src="https://source.unsplash.com/random/1" alt="avator" class="rounded-circle" style="width: 15px;height: 15px;">
+                                  </div>
+                              </div>
+                           </li>
+                           
+                      </ul></div>
+                  </div>
+
+          
+              
+             
+           
+
+          
+
+          <!-- notification  -->
+          <!-- seondaty menu  -->
+
+
+      </div>
+      </div>
+  
+
+  
+  <!-- Main -->
+  <div class="container-fulid">
+      <div class="row justify-content-evenly">
+
+
+<!-- sidebar -->
+          <div class="col-12 col-lg-3">
+              <div class="d-none d-xxl-block h-100 fixed-top overflow-hidden" style="max-width: 360px; width: 100%;z-index:4;">
+              <ul class="navbar-nav mt-4 ms-3 d-flex flex-column pb-3 mb-5" style="padding-top:56px;">
+
+                  <!-- top  -->
+
+                  <!-- avator  -->
+
+
+
+                  <li class="dropdown-item p-1 rounded">
+
+                      <a href="#" class="text-decoration-none text-dark d-flex align-items-center">
+                          <div class="p-2">
+                              <img src="https://source.unsplash.com/happy-people" alt="avator" class="rounded-circle m-2" style="width: 38px;height: 38px; object-fit: cover;">
+                          </div>
+                              <div>
+                                  <p>Vasanth</p>
+                              </div>
+                       
+                      </a>
+                  </li>
+                  <li class="dropdown-item p-1 rounded">
+
+                      <a href="#" class="text-decoration-none text-dark d-flex align-items-center">
+                          <div class="p-2">
+                              <img src="https://source.unsplash.com/random/1" alt="avator" class="rounded-circle m-2" style="width: 38px;height: 38px; object-fit: cover;">
+                          </div>
+                              <div>
+                                  <p class="m-0">Friends</p>
+                              </div>
+                         
+                      </a>
+                  </li>
+                  <li class="dropdown-item p-1 rounded">
+
+                      <a href="#" class="text-decoration-none text-dark d-flex align-items-center">
+                          <div class="p-2">
+                              <img src="https://source.unsplash.com/random/1" alt="avator" class="rounded-circle m-2" style="width: 38px;height: 38px; object-fit: cover;">
+                          </div>
+                              <div>
+                                  <p class="m-0">Friends</p>
+                              </div>
+                         
+                      </a>
+                  </li>
+                  <li class="dropdown-item p-1 rounded">
+
+                      <a href="#" class="text-decoration-none text-dark d-flex align-items-center">
+                          <div class="p-2">
+                              <img src="https://source.unsplash.com/random/1" alt="avator" class="rounded-circle m-2" style="width: 38px;height: 38px; object-fit: cover;">
+                          </div>
+                              <div>
+                                  <p class="m-0">Friends</p>
+                              </div>
+                         
+                      </a>
+                  </li>
+                  <li class="dropdown-item p-1 rounded">
+
+                      <a href="#" class="text-decoration-none text-dark d-flex align-items-center">
+                          <div class="p-2">
+                              <img src="https://source.unsplash.com/random/1" alt="avator" class="rounded-circle m-2" style="width: 38px;height: 38px; object-fit: cover;">
+                          </div>
+                              <div>
+                                  <p class="m-0">Friends</p>
+                              </div>
+                         
+                      </a>
+                  </li>
+                  <li class="p-1">
+                      <div id="accordionExample">
+                          <div>
+                              <!-- see more  -->
+
+                              <div class="accordion-header">
+                              <div class="d-flex align-items-center" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                               <div class="p-2">
+                                  <i class="fas fa-chevron-down rounded-circle p-2" style="background-color: #d5d5d5 !important;"></i>
+                               </div>
+                               <div>
+                                  <p class="m-0">See More</p>
+                               </div>
+
+
+                              </div>
+                          </div>
+                            <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                              <div class="">
+                                  <div class="d-flex align-items-center dropdown-item p-0 m-0">
+
+                                      <div class="p-2">
+                                      <img src="https://source.unsplash.com/random/1" alt="from fb" class="rounded-circle" style="width: 38px;height: 38px;object-fit: cover;">
+
+                                      </div>
+                                      <div>
+                                          <p class="m-0">Campus</p>
+                                      </div>
+                                  </div>
+                              
+                              </div>
+                            </div>
+                            <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                              <div class="">
+                                  <div class="d-flex align-items-center dropdown-item p-0 m-0">
+
+                                      <div class="p-2">
+                                      <img src="https://source.unsplash.com/random/1" alt="from fb" class="rounded-circle" style="width: 38px;height: 38px;object-fit: cover;">
+
+                                      </div>
+                                      <div>
+                                          <p class="m-0">Campus</p>
+                                      </div>
+                                  </div>
+                              
+                              </div>
+                            </div>
+                          </div>
+                     
+                        </div>
+                  </li>
+                  
+                  
+                  <!-- shortcut  -->
+
+
+              </ul>
+              
+              
+              
+              </div>
+          </div>
+          <!-- timeline -->
+
+          <div class="col-12 col-lg-6">
+              <div class="d-flex flex-column justify-content-center w-100 mx-auto" style="padding-top: 56px;max-width: 680px;">
+              
+                  <!-- stories -->
+                  <div class="d-flex justify-content-between position-relative mt-5">
+
+
+                      <!-- story1 -->
+
+                      
+
+                      <!-- s2 -->
+                      <div class="row">
+                          <div class="col">
+
+                          
+                      
+
+                      
+                      <div class="post">
+                          <div class="post__top">
+                            <img class="user__avatar post__avatar" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAABelBMVEUAp8EBgqoJPYjGcDf3tqDrpYuzWjAAqcIBgKnawrbyk4EAlLoJOocJPIgBg6oJOIYJNYUJKFv/uaAAcqgBiq8AnLrXl34JOoIAob0AlLUAg68Bj7LLbzEAb6j/vKEJMnAAaKgJN3sJNHX6lH8Dc6LKbzK6VyT0spqwVSjkx7cJLmkKQYrObyv1qZTunIb1p4kGVpMIUJE8f5SBeHGPZVbAaTXglnPnoIHTg1fZj3M5gKvAt7ShqrJ+bFiRorAFYZkKSI0ogJtPfY1gfIhwe4Suc02cdVu5cUCLd2l2endRfpKyckeldFNdfIbBZS6RZVSeYUXVh1ykXjzKd0KHaF7Shmh2bnLDck/ksKHGp6K0n6LQqqLHd1WlmaSKkqRyjKVnaXqBY2VgZHVEbI/Looe6iWTBp5R3l65bja6djoTVtKFtio1leJCZWDyxgXTOqaVFj6SghGtZjZqntbh8qbhWorm9lYaikY6Kk5xHVoyQfJNtZ4+9lJkHV38w2Z3JAAAO+klEQVR4nO2djVvbxh3HkWMsESRZ+AVjG4OhAmyMwZC2aUwSQ0sbSpO1TbqWhALrRhIn69qu25qm7f733Z1kW7J1ku5+5xf26Ps8gF+A08e/t7vT6TQ1FSlSpEiRIkWKFClSpEiRIkWKFCnS/41k/NUv+/XrLhmTTS1k88ViJqNLkoIl6XomU8znswtTGPQ6cyK2fDFDsDCc1JP1AvqeKWLOa0iJjzlbzGAGJ9igFAyayWevGSW2XSYQzo2ZyS9cE0gZG08PT9fzW0XHkBMveQHj8WrSIZH58gA825SZ7KQyysh8zL7pyajnJzEgEV9GAF4HsjhpziqUz9JkMWI+wYDIkMWJ8VV5qigcz1J+3GiW5Pxw8CTcE8jKY7ejnIXWB3/GzNjDcVgO2mMca+lABhwyH0bUx2hGkAHJkEoKkYMVZUwZR17gjcAC+tIP9z786Ojo6KM9vRDMmBkLYJazBBYOb318YwtrEWtr8eGjYEZp5J1VWeb00MLhJ1uLazecWtt6GBzOSn7UiHydNEW6teXGsxgfhEAsjpRvgQcPGXDvweIgH0b8eLKCEYUgF590vOXJh7T1aYhY1BdGBZhnBER1oVAo6J+ueRvQQjwM809HUxkZAQuoLuydPLr18ZYPH/LTz0IYUVJGkVLZAAtHD6yisOiRYFxafCjZjEqB3sIIEBkB6ZE3aMUnRzpyZunw5NGjQ6pBh47IasHwgNiMa08+e4DKI+oFHFObGTIiYwzqQa5J1dYn47Eia5I59k0u/oj08qEMsWiw1kFuPiyfbs7QEBcYAfeYorBPi7foRpSGwydPsfFJ+ifcYUjk86+H04GTM0x8hb3En0CAWyc+ZbE4hGzDOlzaW0+8ByJcPPL570MYTLH2tvVKAkpID0RpGAmVMcsUPkeEiSESSsKzDeOczMk6AoQZ0ddLkTJC/ZR5zuILbEKYEbf2AlYACJ2BYy31e8SEQMTAVkSOFhknfgvvVhJQxKAwlERWRbnIBijpHRMCYnExzPybKELmaZkjByEnYwgTSsLyqcx8cuLzSiIBZHwQqiEx+ZR54knSEwNiZQxKpLaUrAhC1g63JB2uQxG3Qvko/jAF8DGnGW/CPsQ132HH2sOQgCKSjcw6KJQc1dAlB92T96dvf0lnDDPJ3xHciIxjJh9CbMU1ZLsPbm/EsTaeUAlDzQ5bAg8yeEzo7aVIlTvT0xadJYoZtz4M66NEYBNyEOrehJU78T6974W4GOYURk9AI3KZ0KtaeAJ6IobPMh0BTcgBKEmPvQBvDwLG47e7YDeefEAC873HjB0MUDrlM2F37BQMiPLNl4jryQfvTxNe/HfrJ6zNQQjZayFW4asBwsqfvQEJZDf7TOO/q3zN6Kagjg0XoFT4etCGdECHLMKvGJtTAL1T5h6prY/6k6lXlvGyJhehpHAPhdkHFbYGCmJlIxgPEyZ4vFSSeGdPefOMNZXo0jehAOPxBFem4c41nHkGy06mlUplwElTqZQ/YYLdc7hzDf+yvO9IQCXu3L7zDXm0kbIUP336DOnp2Wm8D5S8vVRZr6y/y+yk3LmGb00JEZ4urXxLDv1OZX09gcDOLy7bzXS5VEqnS6VSudS8OOsyInL8/uXFX77+7osTSWf/aLkAAU4qSeu9AjH/17+ZJUvN+/sz1avnV1cvXtx9aZabp7ZlLxB5s43UNBF+2jQLjGvmON0Usnb03Uq3E7ORRmbDKt2tVmdmXryYIapW76bTyG6XF8/McvvVFdLr6vPnz/9eKFi/zsLI5ab8mRTrZL3SdcHvsfkQ4P3qjEvVfdu0pX38zuvXV1eIMD87O2uyEvK5KWyB+mPspPU6roPf/uOHH8+R9+3P9KnaLmH7ll520Z8/fzU7ayMyEfK4KdfIsKeT9+Lx7bhFWLmDgu3cm/CyWSrdn+kR/kQIC8w25Cn6sCXqhR9SG/WN7bhFiJ3VdHvpPRSPZjueWnpmue8rQvjPWZvQZGxPZycE1Aos5SdMWMeE31TmMWG77SR8de/ezEz5DL2xdHlZxc+PMeHPFqFpsqY5hRkQVCuw9KV4HfspIkzgwV/qPO0kPEaEd9Px7hvHhNA24Syji0o8gQgMQ+Smp4QQ+en8PBnenpb3XTY8rjYvSc0/w28Qwtc/d5yUvT32QIReKaI8Q26KTbhhE6aaTjd9ce/FfvlHq5ykUTJ9heNy3zahmWavxayBCKuGhPCnVJyMmbqE5y4jzlSbTavblrooYWT09S+bsMTROHMg8g5+e0JuSjRtE8bjZtNhxOr98lO7Y3pattPsv/lNyDwMBica1OTLVJfQGgCflZv7NmMVAV50et6pizJ5vWoRFnhMyJxqwIkGqWDZaL5LmPoxXW7fxa66f98sXzqGT01U9avV6n8sQOZSQcQ4qSiD+bBOrTCcn57ujJLOm2nSE023nzrHh/Xvy6X2/f1iBne7+QCZO98iLrpTMqcp7KTzvdMVeBB8enaKBsCu8W98+/QcjR6xTIVzTMOWTOGp1ELUz1LzhHA67qt6HbEvneFdT7jHbIzJFNhn67aq/GoB+iJu1EnvLvUM1CjjSjd4sbCldwh759U2NpzPkP3qtgf/CiRkclN4sbBV+KVDiKiwpqd7T512nJ7eYTgx6kXIVC4ElMNOu7/2CAdlQ9rYwNEMU7kQUQ5t6X6ELv0CbHNchIU3VMJt17MdWBgyji64z1h46PA2lbCLiB8Aw5CVUAwcUeEN1S87iNZPqNswdWpEEirnO/TY2yYiD59C9+5hIxS4U4Jyvk0nFBiGYyS8eCcUITT0x0p4MwThFfspp752xkoYAhHqpOMmDEQE1wpWQiFsdsuXmDAIEeykrIQCK75N6I8IzqQSaz0Uue+MTeiPKKAdtj6NyL3JOoQ36XVRhAnHSHjSIfQxo4h22MYWwsaHSO0eIcWMOy9F7EbINp0ococyJ6En484bcCKVmKeEhc3ToJbdhIOMO2/ETOyxzdMImmsjLbdT9Zs3qZA78N6M3Q6TCQXNl1ott1Px+Mb2ACQZNF29eSlqRztlDHPedstta367PgB58+Y7TZ99TBjFeAJRYLdNOUz1pkb7KN9pi2uH8byFwIKoZPonuLe3h0HIuqBdXEHsI+zNfNfr9Z1LcR8k61IFcclU0elnLFIiSr3dDOMF+iKTqR+hoEqBxWhCkcnUjxB2uskh9tWJIuf16YRLz3jPhw6I/coZUT1TXacTpk5VtSWGkWNNlJhUo+tK6/v4kvfi9aWzmhpLqi1JACP7ujYhgajr6d2kahhvf/sjvrS05LbfUvw3Q40hqUk4o8KxNhEciLpuNtSkRhgMwzj4/bc/zk6XbMXP/vjdMGJEORF25LmADTaAQt55kCQmimnW96SBVdt9+/btbg09Slov55Zz6EcyB2PkuTAIUBF1bL6kapEhhs1cBxP9VLE6b2mxXE6znqxqIEYOE3LPt+HkUkt2iLBWNjeXV7SY8yXrSW4l1301t6rG+Bn5rnziqhe6kj7o2qhLo+VWEWSOSMMv5FZWV5dXc85fyq1o3Ix811uwuynxTq0Pz2HK1eVNpGWk1VWH9brvr2iaWuNi5KkVU8xuOuidfXJ7qccvLuPXEaPCvDCK9/I8lmyqS+ld1Y8vhHLLhF2N7abZOjrcm0WGdlPsnTEgHjFizq4saqzBskKRe+uIcEVfl8xGLUmNPjbE7iNV3TVDOyv/pgOBfVNdJB7Saq73n7RkI6SvAnanC8o1Vm7BB5WbW6Yfd3jlNp3PVC3cgm/ITkO+uUY3d3uVb2Vu0+OImbXpLJHYjCFqB2yjIR9CPe3KLTmECHZWDdVE1wvqQWAqUEBb1Picg0KA7oOLbcKtiPo+/a/UghCBe0VRN9DXS8mBoxPgqLmBcA5EBO4yRDNivwWJVub6LcCuwQ9Jq/nGIni7L4oRTc8CsTy3Ag1FDzdQd/0IwRtFeRtRP/Ak0eCh6FV0ki06oogd27wAW6rn4aFQXAUSukZUHan00i9gwzaPLfd0xRsQaXMOBqitevm52qARitl0b/Bza9CiDWzEwXJBlKRdFixm48T+3qluUk0IN6I3oUYxIv/ONC71b4elN+iE2gownQ4WRCLvSBS153X/dIbiiwAs+zRCz3QqYl9IC9GVbDyLfU9AN6UQal41UdDenkTO9RL0PEMEdFMKYUzzcFOBW8+7/dR/CAEbKVJyqXc2FcY35fZT09dJY7AhBpVwMBBF+ihWN5/6ZVKLEBKIVMKBQBR/74AuYS0gzJbnvDpeUMJYrK8qi7/FRafuBzlpbHUuB0g1VML+QBR/7047FGmd7q6ANZ9K6A5E0UFoIZK7BwQ6KbBrSiXUDhyEw7obYgb3SYOcFEpIrzW9QBzKTViIJCXQSXFBHA6hIxDF3trCqQXa4H4UhN1AhE0fBiEGOimU0HMag6gTiMoQ0mhPctEIsuHw4rATiMO9k6WsByEiwhUAId2GdiAO865r4RChY2A6IQnEoQMGIyJCSJ/GhzB2gAZxo7jZqpwxfA8R1mvzI4yNBhD333xPaC/DBvk+hIY5Ej6MmK0Nb7aNTmjsjup+wHjMv0uti9CZfSqh0RrpnbnlFjUYgee7afM0hjnaW4/LsuKdUqGz3hplNlEbWmebzpiveXkqtFh42xCF4MgBcTA2vMwImsSgEBrpMfARRiU5mFOhpxCXBz61ZG30HtpFzO4OmBG6sKb/zzWjNcyxRCBivxmh/W7UJXI/TdYy8hgBMeNCy2VGYJ8NZSrnM9VIj9OAHcbMgYMRfBJ4pZeoNKORHbMBLSFX7S29BK+pyXXHXsbBuB20J3nK1AgjHhwKIjRqhYnhm8JmXLAYodUQf0h4qbtRUyYgAF3CjDVDwIIalGpU42Di+LCQT0kHc4MFm5UwaTQmJ/76JWf/21KNwDljHzzVqJmTkT9pQs4qNZJ8kAhPbWUm0T3dkhFkgR0SOSfBm3g+SwgyU6oZRsgV7viytgOziD+ccR95eKGDlbN6+gBfhefHqeJr9nbTmYVrRdcVPuq8km7gqw2NZJJcloeFHyTJ5Yi1hqnn8adxHfFsWYefLeqmWWo1GrtYjVYrbSqZYvaas7kke2ncBxUpUqRIkSJFihQpUqRIkSJFihQpkkj9D6m1FnyW0/Z7AAAAAElFTkSuQmCC" alt="">
+                            <div class="post__topInfo">
+                              <h3>Gopi</h3>
+                              <p>25 April at 20:30</p>
+                            </div>
+                          </div>
+                
+                          <div class="post__image">
+                            <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Y2Fyc3xlbnwwfHwwfHw%3D&amp;ixlib=rb-1.2.1&amp;w=1000&amp;q=80" alt="">
+                          </div>
+                
+                          <div class="post__options">
+                            <div class="post__option btn btn-primary ">
+                              <span class=""> Confirm  </span>
+                             
+                            </div>
+                
+                            <div class="post__option">
+                              <span class="material-icons">Delete</span>
+                            
+                            </div>
+                
+                          </div>
+                        </div>
+
+                      </div>
+
+                      <div class="col">
+
+                     
+                        <div class="post">
+                          <div class="post__top">
+                            <img class="user__avatar post__avatar" src="data:image/png;base64,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" alt="">
+                            <div class="post__topInfo">
+                              <h3>Gopi</h3>
+                              <p>25 April at 20:30</p>
+                            </div>
+                          </div>
+                
+                          <div class="post__image">
+                            <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Y2Fyc3xlbnwwfHwwfHw%3D&amp;ixlib=rb-1.2.1&amp;w=1000&amp;q=80" alt="">
+                          </div>
+                
+                          <div class="post__options">
+                            <div class="post__option btn btn-primary ">
+                              <span class=""> Confirm  </span>
+                             
+                            </div>
+                
+                            <div class="post__option">
+                              <span class="material-icons">Delete</span>
+                            
+                            </div>
+                
+                          </div>
+                        </div>
+                 
+                      </div>
+                      <div class="col">
+
+                     
+                        <div class="post">
+                          <div class="post__top">
+                            <img class="user__avatar post__avatar" src="data:image/png;base64,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" alt="">
+                            <div class="post__topInfo">
+                              <h3>Gopi</h3>
+                              <p>25 April at 20:30</p>
+                            </div>
+                          </div>
+                
+                          <div class="post__image">
+                            <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Y2Fyc3xlbnwwfHwwfHw%3D&amp;ixlib=rb-1.2.1&amp;w=1000&amp;q=80" alt="">
+                          </div>
+                
+                          <div class="post__options">
+                            <div class="post__option btn btn-primary ">
+                              <span class=""> Confirm  </span>
+                             
+                            </div>
+                
+                            <div class="post__option">
+                              <span class="material-icons">Delete</span>
+                            
+                            </div>
+                
+                          </div>
+                        </div>
+                      </div>
+                      
+                      <div class="col">
+                          <div class="post">
+                              <div class="post__top">
+                                <img class="user__avatar post__avatar" src="data:image/png;base64,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" alt="">
+                                <div class="post__topInfo">
+                                  <h3>Gopi</h3>
+                                  <p>25 April at 20:30</p>
+                                </div>
+                              </div>
+                    
+                              <div class="post__image">
+                                <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Y2Fyc3xlbnwwfHwwfHw%3D&amp;ixlib=rb-1.2.1&amp;w=1000&amp;q=80" alt="">
+                              </div>
+                    
+                              <div class="post__options">
+                                <div class="post__option btn btn-primary ">
+                                  <span class=""> Confirm  </span>
+                                 
+                                </div>
+                    
+                                <div class="post__option">
+                                  <span class="material-icons">Delete</span>
+                                
+                                </div>
+                    
+                              </div>
+                            </div>
+                      </div>
+                      
+                      <div class="col">
+                          <div class="post">
+                              <div class="post__top">
+                                <img class="user__avatar post__avatar" src="data:image/png;base64,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" alt="">
+                                <div class="post__topInfo">
+                                  <h3>Gopi</h3>
+                                  <p>25 April at 20:30</p>
+                                </div>
+                              </div>
+                    
+                              <div class="post__image">
+                                <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Y2Fyc3xlbnwwfHwwfHw%3D&amp;ixlib=rb-1.2.1&amp;w=1000&amp;q=80" alt="">
+                              </div>
+                    
+                              <div class="post__options">
+                                <div class="post__option btn btn-primary ">
+                                  <span class=""> Confirm  </span>
+                                 
+                                </div>
+                    
+                                <div class="post__option">
+                                  <span class="material-icons">Delete</span>
+                                
+                                </div>
+                    
+                              </div>
+                            </div>
+                      </div>
+                      <div class="col">
+                          <div class="post">
+                              <div class="post__top">
+                                <img class="user__avatar post__avatar" src="data:image/png;base64,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" alt="">
+                                <div class="post__topInfo">
+                                  <h3>Gopi</h3>
+                                  <p>25 April at 20:30</p>
+                                </div>
+                              </div>
+                    
+                              <div class="post__image">
+                                <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Y2Fyc3xlbnwwfHwwfHw%3D&amp;ixlib=rb-1.2.1&amp;w=1000&amp;q=80" alt="">
+                              </div>
+                    
+                              <div class="post__options">
+                                <div class="post__option btn btn-primary ">
+                                  <span class=""> Confirm  </span>
+                                 
+                                </div>
+                    
+                                <div class="post__option">
+                                  <span class="material-icons">Delete</span>
+                                
+                                </div>
+                    
+                              </div>
+                            </div>
+                      </div>
+                      
+                        
+                      <!-- <div class="rounded mx-1 story" type="button" style="width: 6em;height: 190px;">
+
+                          <img src="https://source.unsplash.com/random/3" alt="" class="card-img-top rounded" style="min-height: 190px;object-fit: cover;">
+                      </div>
+                      <div class="rounded mx-1 story d-none d-lg-block" type="button" style="width: 6em;height: 190px;">
+
+                          <img src="https://source.unsplash.com/random/4" alt="" class="card-img-top rounded" style="min-height: 190px;object-fit: cover;">
+                      </div>
+                      <div class="rounded mx-1 story" type="button" style="width: 6em;height: 190px;">
+
+                          <img src="https://source.unsplash.com/random/5" alt="" class="card-img-top rounded" style="min-height: 190px;object-fit: cover;">
+                      </div>
+                      <div class="rounded mx-1 story d-none d-lg-block" type="button" style="width: 6em;height: 190px;">
+
+                          <img src="https://source.unsplash.com/random/7" alt="" class="card-img-top rounded" style="min-height: 190px;object-fit: cover;">
+                      </div> -->
+                      <!-- next-icon  -->
+                    
+                  </div>
+                  </div>
+
+                  <!-- create post  -->
+
+        
+
+                  <!-- create room  -->
+             
+
+                  <!-- posts  -->
+              
+              
+              
+              </div>
+
+          </div>
+          <!-- chatbar -->
+          <div class="col-12 col-lg-3">
+              <div class="
+                  d-none d-xxl-block
+                  h-100
+                  fixed-top
+                  end-0
+                  overflow-hidden
+                  scrollbar
+                " style="
+                  max-width: 360px;
+                  width: 100%;
+                  z-index: 4;
+                  padding-top: 56px;
+                  left: initial !important;
+                ">
+                <div class="p-3 mt-4">
+                  <!-- sponsors -->
+                  <h5 class="text-muted">Sponsored</h5>
+                  <!-- s 1 -->
+                  <li class="dropdown-item my-2 d-flex justify-content-between">
+                    <!-- img -->
+                    <a href="#" class="
+                        d-flex
+                        align-items-center
+                        text-decoration-none
+                        link-dark
+                      ">
+                      <img src="https://source.unsplash.com/random/1" alt="ads" style="width: 100px; height: 100px; object-fit: cover" class="rounded me-3">
+                      <div>
+                        <p class="m-0">Lorem ipsum</p>
+                        <span class="text-muted fs-7">loremipsum.com</span>
+                      </div>
+                    </a>
+                    <!-- icon -->
+                    <div class="
+                        rounded-circle
+                        p-1
+                        bg-white
+                        d-flex
+                        align-items-center
+                        justify-content-center
+                        mx-2
+                        sponsor-icon
+                        nav-item
+                      " type="button" style="width: 38px; height: 38px">
+                      <i class="fas fa-ellipsis-h text-muted p-2" data-bs-toggle="dropdown" aria-expanded="false"></i>
+                      <!-- menu -->
+                      <ul class="dropdown-menu" style="">
+                        <!-- item 1 -->
+                        <li class="dropdown-item">
+                          <a href="#" class="
+                              d-flex
+                              align-items-center
+                              text-decoration-none text-dark
+                            ">
+                            <i class="far fa-window-close"></i>
+                            <div class="ms-3">
+                              <p class="m-0">Hide Ad</p>
+                              <span class="text-muted fs-7">Never see this add again.</span>
+                            </div>
+                          </a>
+                        </li>
+                        <!-- item 2 -->
+                        <li class="dropdown-item">
+                          <a href="#" class="
+                              d-flex
+                              align-items-center
+                              text-decoration-none text-dark
+                            ">
+                            <i class="fas fa-exclamation-triangle"></i>
+                            <div class="ms-3">
+                              <p class="m-0">Report Ad</p>
+                              <span class="text-muted fs-7">Tell us a problem with this add.</span>
+                            </div>
+                          </a>
+                        </li>
+                        <!-- item 3 -->
+                        <li class="dropdown-item">
+                          <a href="#" class="
+                              d-flex
+                              align-items-center
+                              text-decoration-none text-dark
+                            ">
+                            <i class="fas fa-info-circle"></i>
+                            <div class="ms-3">
+                              <p class="m-0">Why am I seeing this ad?</p>
+                            </div>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                  <!-- s 2 -->
+                  <li class="dropdown-item my-2 d-flex justify-content-between">
+                    <!-- img -->
+                    <a href="#" class="
+                        d-flex
+                        align-items-center
+                        text-decoration-none
+                        link-dark
+                      ">
+                      <img src="https://source.unsplash.com/random/2" alt="ads" style="width: 100px; height: 100px; object-fit: cover" class="rounded me-3">
+                      <div>
+                        <p class="m-0">Lorem ipsum</p>
+                        <span class="text-muted fs-7">loremipsum.com</span>
+                      </div>
+                    </a>
+                    <!-- icon -->
+                    <div class="
+                        rounded-circle
+                        p-1
+                        bg-white
+                        d-flex
+                        align-items-center
+                        justify-content-center
+                        mx-2
+                        sponsor-icon
+                        nav-item
+                      " type="button" style="width: 38px; height: 38px">
+                      <i class="fas fa-ellipsis-h text-muted p-2 show" data-bs-toggle="dropdown" aria-expanded="true"></i>
+                      <!-- menu -->
+                      <ul class="dropdown-menu show" style="position: absolute; inset: 0px 0px auto auto; margin: 0px; transform: translate3d(-28px, 273px, 0px);" data-popper-placement="bottom-end">
+                        <!-- item 1 -->
+                        <li class="dropdown-item">
+                          <a href="#" class="
+                              d-flex
+                              align-items-center
+                              text-decoration-none text-dark
+                            ">
+                            <i class="far fa-window-close"></i>
+                            <div class="ms-3">
+                              <p class="m-0">Hide Ad</p>
+                              <span class="text-muted fs-7">Never see this add again.</span>
+                            </div>
+                          </a>
+                        </li>
+                        <!-- item 2 -->
+                        <li class="dropdown-item">
+                          <a href="#" class="
+                              d-flex
+                              align-items-center
+                              text-decoration-none text-dark
+                            ">
+                            <i class="fas fa-exclamation-triangle"></i>
+                            <div class="ms-3">
+                              <p class="m-0">Report Ad</p>
+                              <span class="text-muted fs-7">Tell us a problem with this add.</span>
+                            </div>
+                          </a>
+                        </li>
+                        <!-- item 3 -->
+                        <li class="dropdown-item">
+                          <a href="#" class="
+                              d-flex
+                              align-items-center
+                              text-decoration-none text-dark
+                            ">
+                            <i class="fas fa-info-circle"></i>
+                            <div class="ms-3">
+                              <p class="m-0">Why am I seeing this ad?</p>
+                            </div>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                  <!-- contacts -->
+                  <hr class="m-0">
+                  <div class="my-3 d-flex justify-content-between align-items-center">
+                    <p class="text-muted fs-5 m-0">Contacts</p>
+                    <!-- icons -->
+                    <div class="text-muted">
+                      <!-- video room -->
+                      <i class="fas fa-video mx-2 pointer" type="button" data-bs-toggle="modal" data-bs-target="#videoRoomD"></i>
+                      <!-- video room modal -->
+                      <div class="modal fade" id="videoRoomD" tabindex="-1" aria-labelledby="videoRoomDLabel" aria-hidden="true" data-bs-backdrop="false">
+                        <div class="modal-dialog modal-dialog-centered modal-lg">
+                          <div class="modal-content bg-dark">
+                            <!-- header -->
+                            <div class="modal-header border-0">
+                              <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <!-- body -->
+                            <div class="
+                                modal-body
+                                d-flex
+                                flex-column
+                                align-items-center
+                                justify-content-center
+                              " style="min-height: 400px">
+                              <i class="fas fa-video fs-0"></i>
+                              <h3 class="text-white">Schedule A Room For Later</h3>
+                              <p class="text-white text-center w-50 mx-auto">
+                                Lorem ipsum dolor sit amet consectetur adipisicing
+                                elit. Ut deserunt alias laudantium itaque eius enim
+                                natus culpa eligendi consectetur maiores!
+                              </p>
+                              <button class="btn btn-lg btn-primary rounded-pill">
+                                Schedule Room
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- new chat -->
+                      <i class="fas fa-search mx-2 pointer" type="button" data-bs-toggle="modal" data-bs-target="#newChat"></i>
+                      <!-- chat settings -->
+                      <i class="fas fa-ellipsis-h pointer text-muted mx-2" type="button" data-bs-toggle="dropdown"></i>
+                      <!-- chat setting dd -->
+                      <ul class="dropdown-menu shadow" style="width: 18em">
+                        <!-- title -->
+                        <div class="p-2">
+                          <h5>Chat Settings</h5>
+                          <span class="text-muted fs-7">Customize your Messenger experience.</span>
+                        </div>
+                        <hr>
+                        <!-- incoming sound -->
+                        <li>
+                          <div class="
+                              dropdown-item
+                              d-flex
+                              align-items-center
+                              justify-content-between
+                            ">
+                            <!-- icon -->
+                            <div class="d-flex align-items-center">
+                              <i class="fas fa-phone-alt me-3"></i>
+                              <p class="m-0">Incoming call sounds</p>
+                            </div>
+                            <!-- toggle -->
+                            <div class="form-check form-switch m-0">
+                              <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" checked="">
+                              <label class="form-check-label" for="flexSwitchCheckChecked"></label>
+                            </div>
+                          </div>
+                        </li>
+                        <!-- message sound -->
+                        <li>
+                          <div class="
+                              dropdown-item
+                              d-flex
+                              align-items-center
+                              justify-content-between
+                            ">
+                            <!-- icon -->
+                            <div class="d-flex align-items-center">
+                              <i class="fas fa-volume-off me-4 fs-4"></i>
+                              <p class="m-0">Message sounds</p>
+                            </div>
+                            <!-- toggle -->
+                            <div class="form-check form-switch m-0">
+                              <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" checked="">
+                              <label class="form-check-label" for="flexSwitchCheckChecked"></label>
+                            </div>
+                          </div>
+                        </li>
+                        <!-- popup message -->
+                        <li>
+                          <div class="
+                              dropdown-item
+                              d-flex
+                              align-items-center
+                              justify-content-between
+                            ">
+                            <!-- icon -->
+                            <div class="d-flex align-items-center">
+                              <i class="fas fa-spinner me-3"></i>
+                              <p class="m-0">Pop-up new messages</p>
+                            </div>
+                            <!-- toggle -->
+                            <div class="form-check form-switch m-0">
+                              <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" checked="">
+                              <label class="form-check-label" for="flexSwitchCheckChecked"></label>
+                            </div>
+                          </div>
+                          <span class="ms-5 text-muted fs-7">Automatically open new messages.</span>
+                        </li>
+                        <hr class="m-0">
+                        <!-- item 1 -->
+                        <li>
+                          <div class="
+                              dropdown-item
+                              d-flex
+                              align-items-center
+                              justify-content-between
+                            ">
+                            <!-- icon -->
+                            <div class="d-flex align-items-center">
+                              <i class="fas fa-toggle-off me-3"></i>
+                              <p class="m-0">Turn Off Active Status</p>
+                            </div>
+                          </div>
+                        </li>
+                        <!-- item 2 -->
+                        <li>
+                          <div class="
+                              dropdown-item
+                              d-flex
+                              align-items-center
+                              justify-content-between
+                            ">
+                            <!-- icon -->
+                            <div class="d-flex align-items-center">
+                              <i class="far fa-comment-alt me-3"></i>
+                              <p class="m-0">Message Request</p>
+                            </div>
+                          </div>
+                        </li>
+                        <!-- item 3 -->
+                        <li>
+                          <div class="
+                              dropdown-item
+                              d-flex
+                              align-items-center
+                              justify-content-between
+                            ">
+                            <!-- icon -->
+                            <div class="d-flex align-items-center">
+                              <i class="fas fa-share-square me-3"></i>
+                              <p class="m-0">Message delivery settings</p>
+                            </div>
+                          </div>
+                        </li>
+                        <!-- item 4 -->
+                        <li>
+                          <div class="
+                              dropdown-item
+                              d-flex
+                              align-items-center
+                              justify-content-between
+                            ">
+                            <!-- icon -->
+                            <div class="d-flex align-items-center">
+                              <i class="fas fa-shield-alt me-3"></i>
+                              <p class="m-0">Block settings</p>
+                            </div>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <!-- friend 1 -->
+                  <li class="dropdown-item rounded my-2 px-0" data-bs-toggle="modal" data-bs-target="#singleChat1" type="button">
+                    <!-- avatar -->
+                    <div class="d-flex align-items-center mx-2 chat-avatar" data-bs-custom-class="chat-box" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="left" data-bs-trigger="hover" data-bs-content="
+                        <div>
+                          <div class=&quot;popover-body d-flex p-2&quot;>
+                            <div>
+                              <img src=&quot;https://source.unsplash.com/random/4&quot; alt=&quot;avatar&quot; class=&quot;pop-avatar&quot;  />
+                            </div>
+                            <div >
+                              <h5>Mike</h5>
+                              <div class=&quot;d-flex&quot;>
+                                <i class=&quot;fas fa-user-friends m-1 text-muted&quot;></i>
+                                <p>2 mutual friends: <span class=&quot;fw-bold&quot;>Jerry</span> and <span class=&quot;fw-bold&quot;>Phu</span></p>
+                              </div>
+                              <div class=&quot;d-flex&quot;>
+                              <i class=&quot;fas fa-graduation-cap m-1 text-muted&quot;></i>
+                              <p>Studies at MIT</p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      " data-bs-html="true" data-bs-original-title="" title="">
+                      <div class="position-relative">
+                        <img src="https://source.unsplash.com/random/4" alt="avatar" class="rounded-circle me-2" style="width: 38px; height: 38px; object-fit: cover">
+                        <span class="
+                            position-absolute
+                            bottom-0
+                            translate-middle
+                            border border-light
+                            rounded-circle
+                            bg-success
+                            p-1
+                          " style="left: 75%">
+                          <span class="visually-hidden"></span>
+                        </span>
+                      </div>
+                      <p class="m-0">Mike</p>
+                    </div>
+                  </li>
+                  <!-- friend 2 -->
+                  <li class="dropdown-item rounded my-2 px-0" data-bs-toggle="modal" data-bs-target="#singleChat2" type="button">
+                    <!-- avatar -->
+                    <div class="d-flex align-items-center mx-2 chat-avatar" data-bs-custom-class="chat-box" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="left" data-bs-trigger="hover" data-bs-content="
+                              <div>
+                                <div class=&quot;popover-body d-flex p-2&quot;>
+                                  <div>
+                                    <img src=&quot;https://source.unsplash.com/random/2&quot; alt=&quot;avatar&quot; class=&quot;pop-avatar&quot;  />
+                                  </div>
+                                  <div >
+                                    <h5>Tuan</h5>
+                                    <div class=&quot;d-flex&quot;>
+                                      <i class=&quot;fas fa-user-friends m-1 text-muted&quot;></i>
+                                      <p>2 mutual friends: <span class=&quot;fw-bold&quot;>Jerry</span> and <span class=&quot;fw-bold&quot;>Phu</span></p>
+                                    </div>
+                                    <div class=&quot;d-flex&quot;>
+                                    <i class=&quot;fas fa-graduation-cap m-1 text-muted&quot;></i>
+                                    <p>Studies at MIT</p>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            " data-bs-html="true" data-bs-original-title="" title="">
+                      <div class="position-relative">
+                        <img src="https://source.unsplash.com/random/2" alt="avatar" class="rounded-circle me-2" style="width: 38px; height: 38px; object-fit: cover">
+                        <span class="
+                            position-absolute
+                            bottom-0
+                            translate-middle
+                            border border-light
+                            rounded-circle
+                            bg-success
+                            p-1
+                          " style="left: 75%">
+                          <span class="visually-hidden"></span>
+                        </span>
+                      </div>
+                      <p class="m-0">Tuan</p>
+                    </div>
+                  </li>
+                  <!-- friend 3 -->
+                  <li class="dropdown-item rounded my-2 px-0" data-bs-toggle="modal" data-bs-target="#singleChat3" type="button">
+                    <!-- avatar -->
+                    <div class="d-flex align-items-center mx-2 chat-avatar" data-bs-custom-class="chat-box" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="left" data-bs-trigger="hover" data-bs-content="
+                                  <div>
+                                    <div class=&quot;popover-body d-flex p-2&quot;>
+                                      <div>
+                                        <img src=&quot;https://source.unsplash.com/random/3&quot; alt=&quot;avatar&quot; class=&quot;pop-avatar&quot;  />
+                                      </div>
+                                      <div >
+                                        <h5>Jerry</h5>
+                                        <div class=&quot;d-flex&quot;>
+                                          <i class=&quot;fas fa-user-friends m-1 text-muted&quot;></i>
+                                          <p>2 mutual friends: <span class=&quot;fw-bold&quot;>Jerry</span> and <span class=&quot;fw-bold&quot;>Phu</span></p>
+                                        </div>
+                                        <div class=&quot;d-flex&quot;>
+                                        <i class=&quot;fas fa-graduation-cap m-1 text-muted&quot;></i>
+                                        <p>Studies at MIT</p>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                " data-bs-html="true" data-bs-original-title="" title="">
+                      <div class="position-relative">
+                        <img src="https://source.unsplash.com/random/3" alt="avatar" class="rounded-circle me-2" style="width: 38px; height: 38px; object-fit: cover">
+                        <span class="
+                            position-absolute
+                            bottom-0
+                            translate-middle
+                            border border-light
+                            rounded-circle
+                            bg-success
+                            p-1
+                          " style="left: 75%">
+                          <span class="visually-hidden"></span>
+                        </span>
+                      </div>
+                      <p class="m-0">Jerry</p>
+                    </div>
+                  </li>
+                  <!-- friend 4 -->
+                  <li class="dropdown-item rounded my-2 px-0" data-bs-toggle="modal" data-bs-target="#singleChat4" type="button">
+                    <!-- avatar -->
+                    <div class="d-flex align-items-center mx-2 chat-avatar" data-bs-custom-class="chat-box" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="left" data-bs-trigger="hover" data-bs-content="
+                              <div>
+                                <div class=&quot;popover-body d-flex p-2&quot;>
+                                  <div>
+                                    <img src=&quot;https://source.unsplash.com/random/4&quot; alt=&quot;avatar&quot; class=&quot;pop-avatar&quot;  />
+                                  </div>
+                                  <div >
+                                    <h5>Tony</h5>
+                                    <div class=&quot;d-flex&quot;>
+                                      <i class=&quot;fas fa-user-friends m-1 text-muted&quot;></i>
+                                      <p>2 mutual friends: <span class=&quot;fw-bold&quot;>Jerry</span> and <span class=&quot;fw-bold&quot;>Phu</span></p>
+                                    </div>
+                                    <div class=&quot;d-flex&quot;>
+                                    <i class=&quot;fas fa-graduation-cap m-1 text-muted&quot;></i>
+                                    <p>Studies at MIT</p>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            " data-bs-html="true" data-bs-original-title="" title="">
+                      <div class="position-relative">
+                        <img src="https://source.unsplash.com/random/4" alt="avatar" class="rounded-circle me-2" style="width: 38px; height: 38px; object-fit: cover">
+                        <span class="
+                            position-absolute
+                            bottom-0
+                            translate-middle
+                            border border-light
+                            rounded-circle
+                            bg-success
+                            p-1
+                          " style="left: 75%">
+                          <span class="visually-hidden"></span>
+                        </span>
+                      </div>
+                      <p class="m-0">Tony</p>
+                    </div>
+                  </li>
+                  <!-- friend 5 -->
+                  <li class="dropdown-item rounded my-2 px-0" data-bs-toggle="modal" data-bs-target="#singleChat5" type="button">
+                    <!-- avatar -->
+                    <div class="d-flex align-items-center mx-2 chat-avatar" data-bs-custom-class="chat-box" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="left" data-bs-trigger="hover" data-bs-content="
+                          <div>
+                            <div class=&quot;popover-body d-flex p-2&quot;>
+                              <div>
+                                <img src=&quot;https://source.unsplash.com/random/5&quot; alt=&quot;avatar&quot; class=&quot;pop-avatar&quot;  />
+                              </div>
+                              <div >
+                                <h5>Phu</h5>
+                                <div class=&quot;d-flex&quot;>
+                                  <i class=&quot;fas fa-user-friends m-1 text-muted&quot;></i>
+                                  <p>2 mutual friends: <span class=&quot;fw-bold&quot;>Jerry</span> and <span class=&quot;fw-bold&quot;>Phu</span></p>
+                                </div>
+                                <div class=&quot;d-flex&quot;>
+                                <i class=&quot;fas fa-graduation-cap m-1 text-muted&quot;></i>
+                                <p>Studies at MIT</p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        " data-bs-html="true" data-bs-original-title="" title="">
+                      <div class="position-relative">
+                        <img src="https://source.unsplash.com/random/5" alt="avatar" class="rounded-circle me-2" style="width: 38px; height: 38px; object-fit: cover">
+                        <span class="
+                            position-absolute
+                            bottom-0
+                            translate-middle
+                            border border-light
+                            rounded-circle
+                            bg-success
+                            p-1
+                          " style="left: 75%">
+                          <span class="visually-hidden"></span>
+                        </span>
+                      </div>
+                      <p class="m-0">Phu</p>
+                    </div>
+                  </li>
+                  <!-- friend 6 -->
+                  <li class="dropdown-item rounded my-2 px-0" data-bs-toggle="modal" data-bs-target="#singleChat1" type="button">
+                    <!-- avatar -->
+                    <div class="d-flex align-items-center mx-2 chat-avatar" data-bs-custom-class="chat-box" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="left" data-bs-trigger="hover" data-bs-content="
+                                      <div>
+                                        <div class=&quot;popover-body d-flex p-2&quot;>
+                                          <div>
+                                            <img src=&quot;https://source.unsplash.com/random/4&quot; alt=&quot;avatar&quot; class=&quot;pop-avatar&quot;  />
+                                          </div>
+                                          <div >
+                                            <h5>Mike</h5>
+                                            <div class=&quot;d-flex&quot;>
+                                              <i class=&quot;fas fa-user-friends m-1 text-muted&quot;></i>
+                                              <p>2 mutual friends: <span class=&quot;fw-bold&quot;>Jerry</span> and <span class=&quot;fw-bold&quot;>Phu</span></p>
+                                            </div>
+                                            <div class=&quot;d-flex&quot;>
+                                            <i class=&quot;fas fa-graduation-cap m-1 text-muted&quot;></i>
+                                            <p>Studies at MIT</p>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    " data-bs-html="true" data-bs-original-title="" title="">
+                      <div class="position-relative">
+                        <img src="https://source.unsplash.com/random/4" alt="avatar" class="rounded-circle me-2" style="width: 38px; height: 38px; object-fit: cover">
+                        <span class="
+                            position-absolute
+                            bottom-0
+                            translate-middle
+                            border border-light
+                            rounded-circle
+                            bg-success
+                            p-1
+                          " style="left: 75%">
+                          <span class="visually-hidden"></span>
+                        </span>
+                      </div>
+                      <p class="m-0">Mike</p>
+                    </div>
+                  </li>
+                  <!-- friend 7 -->
+                  <li class="dropdown-item rounded my-2 px-0" data-bs-toggle="modal" data-bs-target="#singleChat2" type="button">
+                    <!-- avatar -->
+                    <div class="d-flex align-items-center mx-2 chat-avatar" data-bs-custom-class="chat-box" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="left" data-bs-trigger="hover" data-bs-content="
+                                            <div>
+                                              <div class=&quot;popover-body d-flex p-2&quot;>
+                                                <div>
+                                                  <img src=&quot;https://source.unsplash.com/random/2&quot; alt=&quot;avatar&quot; class=&quot;pop-avatar&quot;  />
+                                                </div>
+                                                <div >
+                                                  <h5>Tuan</h5>
+                                                  <div class=&quot;d-flex&quot;>
+                                                    <i class=&quot;fas fa-user-friends m-1 text-muted&quot;></i>
+                                                    <p>2 mutual friends: <span class=&quot;fw-bold&quot;>Jerry</span> and <span class=&quot;fw-bold&quot;>Phu</span></p>
+                                                  </div>
+                                                  <div class=&quot;d-flex&quot;>
+                                                  <i class=&quot;fas fa-graduation-cap m-1 text-muted&quot;></i>
+                                                  <p>Studies at MIT</p>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                            </div>
+                                          " data-bs-html="true" data-bs-original-title="" title="">
+                      <div class="position-relative">
+                        <img src="https://source.unsplash.com/random/2" alt="avatar" class="rounded-circle me-2" style="width: 38px; height: 38px; object-fit: cover">
+                        <span class="
+                            position-absolute
+                            bottom-0
+                            translate-middle
+                            border border-light
+                            rounded-circle
+                            bg-success
+                            p-1
+                          " style="left: 75%">
+                          <span class="visually-hidden"></span>
+                        </span>
+                      </div>
+                      <p class="m-0">Tuan</p>
+                    </div>
+                  </li>
+                  <!-- friend 8 -->
+                  <li class="dropdown-item rounded my-2 px-0" data-bs-toggle="modal" data-bs-target="#singleChat3" type="button">
+                    <!-- avatar -->
+                    <div class="d-flex align-items-center mx-2 chat-avatar" data-bs-custom-class="chat-box" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="left" data-bs-trigger="hover" data-bs-content="
+                                                <div>
+                                                  <div class=&quot;popover-body d-flex p-2&quot;>
+                                                    <div>
+                                                      <img src=&quot;https://source.unsplash.com/random/3&quot; alt=&quot;avatar&quot; class=&quot;pop-avatar&quot;  />
+                                                    </div>
+                                                    <div >
+                                                      <h5>Jerry</h5>
+                                                      <div class=&quot;d-flex&quot;>
+                                                        <i class=&quot;fas fa-user-friends m-1 text-muted&quot;></i>
+                                                        <p>2 mutual friends: <span class=&quot;fw-bold&quot;>Jerry</span> and <span class=&quot;fw-bold&quot;>Phu</span></p>
+                                                      </div>
+                                                      <div class=&quot;d-flex&quot;>
+                                                      <i class=&quot;fas fa-graduation-cap m-1 text-muted&quot;></i>
+                                                      <p>Studies at MIT</p>
+                                                      </div>
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                              " data-bs-html="true" data-bs-original-title="" title="">
+                      <div class="position-relative">
+                        <img src="https://source.unsplash.com/random/3" alt="avatar" class="rounded-circle me-2" style="width: 38px; height: 38px; object-fit: cover">
+                        <span class="
+                            position-absolute
+                            bottom-0
+                            translate-middle
+                            border border-light
+                            rounded-circle
+                            bg-success
+                            p-1
+                          " style="left: 75%">
+                          <span class="visually-hidden"></span>
+                        </span>
+                      </div>
+                      <p class="m-0">Jerry</p>
+                    </div>
+                  </li>
+                  <!-- friend 9 -->
+                  <li class="dropdown-item rounded my-2 px-0" data-bs-toggle="modal" data-bs-target="#singleChat4" type="button">
+                    <!-- avatar -->
+                    <div class="d-flex align-items-center mx-2 chat-avatar" data-bs-custom-class="chat-box" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="left" data-bs-trigger="hover" data-bs-content="
+                                            <div>
+                                              <div class=&quot;popover-body d-flex p-2&quot;>
+                                                <div>
+                                                  <img src=&quot;https://source.unsplash.com/random/4&quot; alt=&quot;avatar&quot; class=&quot;pop-avatar&quot;  />
+                                                </div>
+                                                <div >
+                                                  <h5>Tony</h5>
+                                                  <div class=&quot;d-flex&quot;>
+                                                    <i class=&quot;fas fa-user-friends m-1 text-muted&quot;></i>
+                                                    <p>2 mutual friends: <span class=&quot;fw-bold&quot;>Jerry</span> and <span class=&quot;fw-bold&quot;>Phu</span></p>
+                                                  </div>
+                                                  <div class=&quot;d-flex&quot;>
+                                                  <i class=&quot;fas fa-graduation-cap m-1 text-muted&quot;></i>
+                                                  <p>Studies at MIT</p>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                            </div>
+                                          " data-bs-html="true" data-bs-original-title="" title="">
+                      <div class="position-relative">
+                        <img src="https://source.unsplash.com/random/4" alt="avatar" class="rounded-circle me-2" style="width: 38px; height: 38px; object-fit: cover">
+                        <span class="
+                            position-absolute
+                            bottom-0
+                            translate-middle
+                            border border-light
+                            rounded-circle
+                            bg-success
+                            p-1
+                          " style="left: 75%">
+                          <span class="visually-hidden"></span>
+                        </span>
+                      </div>
+                      <p class="m-0">Tony</p>
+                    </div>
+                  </li>
+                  <!-- friend 10 -->
+                  <li class="dropdown-item rounded my-2 px-0" data-bs-toggle="modal" data-bs-target="#singleChat5" type="button">
+                    <!-- avatar -->
+                    <div class="d-flex align-items-center mx-2 chat-avatar" data-bs-custom-class="chat-box" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="left" data-bs-trigger="hover" data-bs-content="
+                                        <div>
+                                          <div class=&quot;popover-body d-flex p-2&quot;>
+                                            <div>
+                                              <img src=&quot;https://source.unsplash.com/random/5&quot; alt=&quot;avatar&quot; class=&quot;pop-avatar&quot;  />
+                                            </div>
+                                            <div >
+                                              <h5>Phu</h5>
+                                              <div class=&quot;d-flex&quot;>
+                                                <i class=&quot;fas fa-user-friends m-1 text-muted&quot;></i>
+                                                <p>2 mutual friends: <span class=&quot;fw-bold&quot;>Jerry</span> and <span class=&quot;fw-bold&quot;>Phu</span></p>
+                                              </div>
+                                              <div class=&quot;d-flex&quot;>
+                                              <i class=&quot;fas fa-graduation-cap m-1 text-muted&quot;></i>
+                                              <p>Studies at MIT</p>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      " data-bs-html="true" data-bs-original-title="" title="">
+                      <div class="position-relative">
+                        <img src="https://source.unsplash.com/random/5" alt="avatar" class="rounded-circle me-2" style="width: 38px; height: 38px; object-fit: cover">
+                        <span class="
+                            position-absolute
+                            bottom-0
+                            translate-middle
+                            border border-light
+                            rounded-circle
+                            bg-success
+                            p-1
+                          " style="left: 75%">
+                          <span class="visually-hidden"></span>
+                        </span>
+                      </div>
+                      <p class="m-0">Phu</p>
+                    </div>
+                  </li>
+                  <!-- friend 11 -->
+                  <li class="dropdown-item rounded my-2 px-0" data-bs-toggle="modal" data-bs-target="#singleChat1" type="button">
+                    <!-- avatar -->
+                    <div class="d-flex align-items-center mx-2 chat-avatar" data-bs-custom-class="chat-box" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="left" data-bs-trigger="hover" data-bs-content="
+                        <div>
+                          <div class=&quot;popover-body d-flex p-2&quot;>
+                            <div>
+                              <img src=&quot;https://source.unsplash.com/random/4&quot; alt=&quot;avatar&quot; class=&quot;pop-avatar&quot;  />
+                            </div>
+                            <div >
+                              <h5>Mike</h5>
+                              <div class=&quot;d-flex&quot;>
+                                <i class=&quot;fas fa-user-friends m-1 text-muted&quot;></i>
+                                <p>2 mutual friends: <span class=&quot;fw-bold&quot;>Jerry</span> and <span class=&quot;fw-bold&quot;>Phu</span></p>
+                              </div>
+                              <div class=&quot;d-flex&quot;>
+                              <i class=&quot;fas fa-graduation-cap m-1 text-muted&quot;></i>
+                              <p>Studies at MIT</p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      " data-bs-html="true" data-bs-original-title="" title="">
+                      <div class="position-relative">
+                        <img src="https://source.unsplash.com/random/4" alt="avatar" class="rounded-circle me-2" style="width: 38px; height: 38px; object-fit: cover">
+                        <span class="
+                            position-absolute
+                            bottom-0
+                            translate-middle
+                            border border-light
+                            rounded-circle
+                            bg-success
+                            p-1
+                          " style="left: 75%">
+                          <span class="visually-hidden"></span>
+                        </span>
+                      </div>
+                      <p class="m-0">Mike</p>
+                    </div>
+                  </li>
+                  <!-- friend 12 -->
+                  <li class="dropdown-item rounded my-2 px-0" data-bs-toggle="modal" data-bs-target="#singleChat2" type="button">
+                    <!-- avatar -->
+                    <div class="d-flex align-items-center mx-2 chat-avatar" data-bs-custom-class="chat-box" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="left" data-bs-trigger="hover" data-bs-content="
+                              <div>
+                                <div class=&quot;popover-body d-flex p-2&quot;>
+                                  <div>
+                                    <img src=&quot;https://source.unsplash.com/random/2&quot; alt=&quot;avatar&quot; class=&quot;pop-avatar&quot;  />
+                                  </div>
+                                  <div >
+                                    <h5>Tuan</h5>
+                                    <div class=&quot;d-flex&quot;>
+                                      <i class=&quot;fas fa-user-friends m-1 text-muted&quot;></i>
+                                      <p>2 mutual friends: <span class=&quot;fw-bold&quot;>Jerry</span> and <span class=&quot;fw-bold&quot;>Phu</span></p>
+                                    </div>
+                                    <div class=&quot;d-flex&quot;>
+                                    <i class=&quot;fas fa-graduation-cap m-1 text-muted&quot;></i>
+                                    <p>Studies at MIT</p>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            " data-bs-html="true" data-bs-original-title="" title="">
+                      <div class="position-relative">
+                        <img src="https://source.unsplash.com/random/2" alt="avatar" class="rounded-circle me-2" style="width: 38px; height: 38px; object-fit: cover">
+                        <span class="
+                            position-absolute
+                            bottom-0
+                            translate-middle
+                            border border-light
+                            rounded-circle
+                            bg-success
+                            p-1
+                          " style="left: 75%">
+                          <span class="visually-hidden"></span>
+                        </span>
+                      </div>
+                      <p class="m-0">Tuan</p>
+                    </div>
+                  </li>
+                  <!-- friend 13 -->
+                  <li class="dropdown-item rounded my-2 px-0" data-bs-toggle="modal" data-bs-target="#singleChat3" type="button">
+                    <!-- avatar -->
+                    <div class="d-flex align-items-center mx-2 chat-avatar" data-bs-custom-class="chat-box" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="left" data-bs-trigger="hover" data-bs-content="
+                                  <div>
+                                    <div class=&quot;popover-body d-flex p-2&quot;>
+                                      <div>
+                                        <img src=&quot;https://source.unsplash.com/random/3&quot; alt=&quot;avatar&quot; class=&quot;pop-avatar&quot;  />
+                                      </div>
+                                      <div >
+                                        <h5>Jerry</h5>
+                                        <div class=&quot;d-flex&quot;>
+                                          <i class=&quot;fas fa-user-friends m-1 text-muted&quot;></i>
+                                          <p>2 mutual friends: <span class=&quot;fw-bold&quot;>Jerry</span> and <span class=&quot;fw-bold&quot;>Phu</span></p>
+                                        </div>
+                                        <div class=&quot;d-flex&quot;>
+                                        <i class=&quot;fas fa-graduation-cap m-1 text-muted&quot;></i>
+                                        <p>Studies at MIT</p>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                " data-bs-html="true" data-bs-original-title="" title="">
+                      <div class="position-relative">
+                        <img src="https://source.unsplash.com/random/3" alt="avatar" class="rounded-circle me-2" style="width: 38px; height: 38px; object-fit: cover">
+                        <span class="
+                            position-absolute
+                            bottom-0
+                            translate-middle
+                            border border-light
+                            rounded-circle
+                            bg-success
+                            p-1
+                          " style="left: 75%">
+                          <span class="visually-hidden"></span>
+                        </span>
+                      </div>
+                      <p class="m-0">Jerry</p>
+                    </div>
+                  </li>
+                  <!-- friend 14 -->
+                  <li class="dropdown-item rounded my-2 px-0" data-bs-toggle="modal" data-bs-target="#singleChat4" type="button">
+                    <!-- avatar -->
+                    <div class="d-flex align-items-center mx-2 chat-avatar" data-bs-custom-class="chat-box" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="left" data-bs-trigger="hover" data-bs-content="
+                              <div>
+                                <div class=&quot;popover-body d-flex p-2&quot;>
+                                  <div>
+                                    <img src=&quot;https://source.unsplash.com/random/4&quot; alt=&quot;avatar&quot; class=&quot;pop-avatar&quot;  />
+                                  </div>
+                                  <div >
+                                    <h5>Tony</h5>
+                                    <div class=&quot;d-flex&quot;>
+                                      <i class=&quot;fas fa-user-friends m-1 text-muted&quot;></i>
+                                      <p>2 mutual friends: <span class=&quot;fw-bold&quot;>Jerry</span> and <span class=&quot;fw-bold&quot;>Phu</span></p>
+                                    </div>
+                                    <div class=&quot;d-flex&quot;>
+                                    <i class=&quot;fas fa-graduation-cap m-1 text-muted&quot;></i>
+                                    <p>Studies at MIT</p>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            " data-bs-html="true" data-bs-original-title="" title="">
+                      <div class="position-relative">
+                        <img src="https://source.unsplash.com/random/4" alt="avatar" class="rounded-circle me-2" style="width: 38px; height: 38px; object-fit: cover">
+                        <span class="
+                            position-absolute
+                            bottom-0
+                            translate-middle
+                            border border-light
+                            rounded-circle
+                            bg-success
+                            p-1
+                          " style="left: 75%">
+                          <span class="visually-hidden"></span>
+                        </span>
+                      </div>
+                      <p class="m-0">Tony</p>
+                    </div>
+                  </li>
+                  <!-- friend 15 -->
+                  <li class="dropdown-item rounded my-2 px-0" data-bs-toggle="modal" data-bs-target="#singleChat5" type="button">
+                    <!-- avatar -->
+                    <div class="d-flex align-items-center mx-2 chat-avatar" data-bs-custom-class="chat-box" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="left" data-bs-trigger="hover" data-bs-content="
+                          <div>
+                            <div class=&quot;popover-body d-flex p-2&quot;>
+                              <div>
+                                <img src=&quot;https://source.unsplash.com/random/5&quot; alt=&quot;avatar&quot; class=&quot;pop-avatar&quot;  />
+                              </div>
+                              <div >
+                                <h5>Phu</h5>
+                                <div class=&quot;d-flex&quot;>
+                                  <i class=&quot;fas fa-user-friends m-1 text-muted&quot;></i>
+                                  <p>2 mutual friends: <span class=&quot;fw-bold&quot;>Jerry</span> and <span class=&quot;fw-bold&quot;>Phu</span></p>
+                                </div>
+                                <div class=&quot;d-flex&quot;>
+                                <i class=&quot;fas fa-graduation-cap m-1 text-muted&quot;></i>
+                                <p>Studies at MIT</p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        " data-bs-html="true" data-bs-original-title="" title="">
+                      <div class="position-relative">
+                        <img src="https://source.unsplash.com/random/5" alt="avatar" class="rounded-circle me-2" style="width: 38px; height: 38px; object-fit: cover">
+                        <span class="
+                            position-absolute
+                            bottom-0
+                            translate-middle
+                            border border-light
+                            rounded-circle
+                            bg-success
+                            p-1
+                          " style="left: 75%">
+                          <span class="visually-hidden"></span>
+                        </span>
+                      </div>
+                      <p class="m-0">Phu</p>
+                    </div>
+                  </li>
+                </div>
+              </div>
+            </div>
+
+      </div>
+  </div>
+
+  <!-- appbar  -->
+
+
+<div class="modal fade" id="newcheck" tabindex="-1" aria-labelledby="newcheckLabel" aria-hidden="true" data-bs-backdrop="false">
+  <div class="modal-dialog model-sm position-absolute bottom-0 end-0 w-75 shadow" style="transform: translateX(-80px);">
+    <div class="modal-content border-0">
+
+      <!-- header  -->
+      <div class="modal-header align-items-start">
+          <div>
+        <h6 class="modal-title text-dark mb-2" id="singlechatLabel">New Message</h6>
+        <label class="text-dark">To:</label>
+        <input type="text" class="border-0">
+      </div>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+
+      <!-- body  -->
+      <div class="modal-body shadow m-0">
+          <p class="m-0 text-primary ms-4">Suggested</p>
+
+     
+      </div>
+      <!-- footer  -->
+      <div class="modal-footer b-0" style="min-height: 300px;">
+
+
+        </div>
+    </div>
+  </div>
+</div>
+
+<!-- new char  -->
+<!-- Button trigger modal -->
+
+
+<!-- single chat  -->
+
+
+  <!-- bootstrap -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+  <!-- main js -->
+  <script src="./script.js"></script>
+
+
+
+</body></html>

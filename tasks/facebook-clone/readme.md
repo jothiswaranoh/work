@@ -11,7 +11,7 @@ This is a Facebook clone website that replicates some of the features of the ori
 
 ## Demo
 
-Images/GIFs showcasing the different pages and features:
+images/GIFs showcasing the different pages and features:
 
 **Login Page:**
 
@@ -46,7 +46,7 @@ Log in using your registered email and password.
 Explore the different pages: feed, games, and video.
 Interact with the features on each page, such as posting updates, playing games, and watching videos.
 Log out when you're done using the platform.
-**Technologies Used**
+**Technologies Used***
 HTML5
 CSS3
 JavaScript
