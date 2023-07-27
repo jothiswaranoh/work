@@ -1,22 +1,25 @@
 class StudentsController < ApplicationController
     def test
-      @student = Students.new1 # Create a new student
-      @students = Students.all # View all students
+      @student = Student.new
     end
   
     def create
       @student = Student.new(student_params)
-      if @student.save # Save the student
+      if @student.save
         redirect_to student_path(@student)
       else
-        render :new # Render the 'new' template again in case of validation errors
+        render :new
       end
+    end
+  
+    def index
+      @students = Student.all
     end
   
     private
   
     def student_params
-      params.require(:student).permit(:first_name, :last_name, :class, :email, :password)
+      params.require(:student).permit(:first_name, :last_name, :student_class, :email, :password)
     end
   end
   

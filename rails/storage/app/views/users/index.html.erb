@@ -1,0 +1,20 @@
+<!-- app/views/users/index.html.erb -->
+<p style="color: green"><%= notice %></p>
+
+<h1>Users</h1>
+
+<div id="users">
+  <% @user.each do |user| %>
+    <%= render user %>
+    <p>
+      <%= link_to "Show this user", user %>
+    </p>
+    <% if user.avatar.attached? %>
+      <%= image_tag user.avatar.variant(resize_to_limit: [100, 100]) %>
+    <% else %>
+      <p>No avatar available.</p>
+    <% end %>
+  <% end %>
+</div>
+
+<%= link_to "New user", new_user_path %>

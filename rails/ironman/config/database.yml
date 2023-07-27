@@ -18,3 +18,8 @@ test:
 production:
   <<: *default
   database: production1
+
+staging:
+  <<: *default
+  database: development1
+

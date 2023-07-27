@@ -1,0 +1,16 @@
+<h1>hello new </h1>
+<% if @book.errors.any? %>
+    <%= @book.errors.full_messages%>
+<% end %>
+<%= form_for @book do |form| %>
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+    <%= form.label :content %>
+    <%= form.text_field :content %>
+    <%= form.label :price %>
+    <%= form.text_field :price %>
+
+    
+    
+    <%= form.submit %>
+    <%end %>
