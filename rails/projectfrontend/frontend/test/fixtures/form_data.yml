@@ -1,0 +1,55 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  first_name: MyString
+  last_name: MyString
+  email: MyString
+  phone: MyString
+  username: MyString
+  password: MyString
+  confirm_password: MyString
+  school: MyString
+  tenth_percentage: 1.5
+  twelfth_percentage: 1.5
+  college: MyString
+  cgpa: 1.5
+  adhar_card_number: MyString
+  pan_card_number: MyString
+  profession: MyString
+  instagram_id: MyString
+  facebook_id: MyString
+  twitter_id: MyString
+  thread_id: MyString
+  whatsapp_number: MyString
+  father_number: MyString
+  mother_number: MyString
+  father_contact: MyString
+  mother_contact: MyString
+  marital_status: MyString
+
+two:
+  first_name: MyString
+  last_name: MyString
+  email: MyString
+  phone: MyString
+  username: MyString
+  password: MyString
+  confirm_password: MyString
+  school: MyString
+  tenth_percentage: 1.5
+  twelfth_percentage: 1.5
+  college: MyString
+  cgpa: 1.5
+  adhar_card_number: MyString
+  pan_card_number: MyString
+  profession: MyString
+  instagram_id: MyString
+  facebook_id: MyString
+  twitter_id: MyString
+  thread_id: MyString
+  whatsapp_number: MyString
+  father_number: MyString
+  mother_number: MyString
+  father_contact: MyString
+  mother_contact: MyString
+  marital_status: MyString

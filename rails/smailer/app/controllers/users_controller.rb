@@ -1,5 +1,14 @@
 class UsersController < ApplicationController
   before_action :set_user, only: %i[ show edit update destroy ]
+  
+#The %i is a shorthand notation in Ruby for creating an array of symbols. 
+# Long version using square brackets
+# array = [:symbol1, :symbol2, :symbol3]
+
+# # Short version using %i
+# array = %i[symbol1 symbol2 symbol3]
+
+
 
   # GET /users or /users.json
   def index

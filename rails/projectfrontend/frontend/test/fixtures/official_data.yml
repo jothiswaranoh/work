@@ -1,0 +1,35 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  company: MyString
+  role: MyString
+  employee_id: MyString
+  employee_mail_id: MyString
+  laptop_serial: MyString
+  laptop_model: MyString
+  laptop_brand: MyString
+  laptop_mac: MyString
+  hoodies: MyString
+  experience: MyString
+  account_number: MyString
+  bank_name: MyString
+  branch: MyString
+  ifsc_code: MyString
+  account_holder_name: MyString
+
+two:
+  company: MyString
+  role: MyString
+  employee_id: MyString
+  employee_mail_id: MyString
+  laptop_serial: MyString
+  laptop_model: MyString
+  laptop_brand: MyString
+  laptop_mac: MyString
+  hoodies: MyString
+  experience: MyString
+  account_number: MyString
+  bank_name: MyString
+  branch: MyString
+  ifsc_code: MyString
+  account_holder_name: MyString
