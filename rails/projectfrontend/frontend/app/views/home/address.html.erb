@@ -76,11 +76,14 @@
             </div>
 
             <div class="col-12">
-              <div class="container text-center">
-                <%= form.submit "Submit", class: "btn btn-success btn-block m-5" %>
-              </div>
-              <%= link_to "Back", personal_path, class: "btn btn-secondary" %>
-            </div>
+
+             <div class="container text-center">
+                <%= form.submit 'Next', class: "btn btn-warning btn-block m-5" %>
+          
+                <%= link_to "Back", personal_path, class: "btn btn-secondary  ml-3" %>
+                 </div>
+             </div>
+          </div>
           <% end %>
         <% else %>
           <h4 class="mb-3">Personal Information</h4>
@@ -151,11 +154,13 @@
             </div>
 
             <div class="col-12">
-              <div class="container text-center">
-                <%= form.submit "Submit", class: "btn btn-success btn-block m-5" %>
-              </div>
-              <%= link_to "Back", personal_path, class: "btn btn-secondary" %>
-            </div>
+
+             <div class="container text-center">
+                <%= form.submit 'Next', class: "btn btn-warning btn-block m-5" %>
+          
+                <%= link_to "Back", personal_path, class: "btn btn-secondary  ml-3" %>
+                 </div>
+             </div>
           <% end %>
         <% end %>
       </div>

@@ -86,12 +86,14 @@
                 <%= form.text_field :account_holder_name, class: "form-control", placeholder: "Enter account holder name as per passbook" %>
               </div>
 
-              <div class="col-12">
-                <div class="container text-center">
-                  <%= form.submit "Submit", class: "btn btn-success btn-block m-5" %>
+
+            <div class="col-12">
+
+            <div class="container text-center">
+               <%= form.submit 'Submit', class: "btn btn-warning btn-block m-5" %>
+         
+               <%= link_to "Back", address_path, class: "btn btn-secondary  ml-3" %>
                 </div>
-                <%= link_to "Back", address_path %>
-              </div>
             </div>
           <% end %>
         <% else %>

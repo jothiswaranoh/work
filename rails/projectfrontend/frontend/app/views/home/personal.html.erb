@@ -159,13 +159,14 @@
                 </div>
               </div>
     
+           
               <div class="col-12">
               <div class="container text-center">
-    <%= form.submit "Submit", class: "btn btn-success btn-block m-5" %>
-    </div>
-    
-           
-    </div>
+                <%= form.submit 'Next', class: "btn btn-warning btn-block m-5" %>
+                <a href="<%= root_path %>" class="btn btn-secondary ml-3">Back</a>
+              </div>
+            </div>
+ 
     <% end %>
           </div>
         </div>
@@ -175,8 +176,7 @@
     
     
     
-    
-      <a href="<%= root_path %>" class="btn btn-secondary">Back to Home</a>
+   
     <% else %>
       <!-- Display the form fields if there is data available -->
       <h4 class="mb-3">Personal Information</h4>
@@ -331,11 +331,12 @@
             </div>
 
             <div class="col-12">
-              <div class="container text-center">
-                <%= form.submit 'Submit', class: 'btn btn-success btn-block m-5' %>
-                <a href="<%= root_path %>" class="btn btn-secondary">Back</a>
-              </div>
+            <div class="container text-center">
+              <%= form.submit 'Next', class: 'btn btn-search btn-block m-5' %>
+              <a href="<%= root_path %>" class="btn btn-secondary ml-3">Back</a>
             </div>
+          </div>
+          
           <% end %>
         <% end %>
       </div>
