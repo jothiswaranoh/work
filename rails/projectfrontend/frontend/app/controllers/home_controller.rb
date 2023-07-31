@@ -1,6 +1,13 @@
 class HomeController < ApplicationController
+  before_action :authenticate_user!
   def index
     session.clear
+    if params[:query].present?
+      @results = search_solr(params[:query])
+    else
+      @results = []
+    end
+
   end
 
   def personal
@@ -41,30 +48,93 @@ class HomeController < ApplicationController
     end
   end
 
+  # def create_official
+  #   @form_data = FormDatum.new(session[:form_data] || {})
+  #   @address_data = AddressDatum.new(session[:address_data] || {})
+  #   @official_data = OfficialDatum.new(official_params)
+
+  #   if @official_data.valid?
+  #     # Save the records to the database
+  #     # Assuming you have defined these models and their associations.
+  #     @form_data.save
+  #     @address_data.save
+  #     @official_data.save
+  #     solr = RSolr.connect(url: 'http://localhost:8983/solr/forms')
+      
+  #     # solr.add(@form_data.attributes)
+  #     # solr.commit
+  #     # solr.add(@address_data.attributes)
+  #     # solr.commit
+  #     #  solr.add(@official_data.attributes)
+  #     #  solr.commit
+      
+  #     solr.add([
+  #     @form_data.attributes.merge(id: @form_data.id),
+  #     @address_data.attributes.merge(id: @address_data.id),
+  #     @official_data.attributes.merge(id: @official_data.id)
+  #   ])
+  #   solr.commit
+
+  #     # Commit the changes to Solr
+     
+
+  #     # Clear session data after successful submission
+  #     session[:form_data] = nil
+  #     session[:address_data] = nil
+  #     session[:official_data] = nil
+
+  #     redirect_to root_path, notice: "Form submitted successfully!"
+  #   else
+  #     render :official
+  #   end
+  # end
   def create_official
     @form_data = FormDatum.new(session[:form_data] || {})
     @address_data = AddressDatum.new(session[:address_data] || {})
     @official_data = OfficialDatum.new(official_params)
-
+  
     if @official_data.valid?
       # Save the records to the database
-      # Assuming you have defined these models and their associations.
-      @form_data.save
-      @address_data.save
-      @official_data.save
-
-      # Clear session data after successful submission
-      session[:form_data] = nil
-      session[:address_data] = nil
-      session[:official_data] = nil
-
-      redirect_to root_path, notice: "Form submitted successfully!"
+      if @form_data.save && @address_data.save && @official_data.save
+        # Add data to Solr
+        solr = RSolr.connect(url: 'http://localhost:8983/solr/forms')# Replace 'new_core' with your Solr core name
+        solr.add([
+          @form_data.attributes.merge(id: @form_data.id),
+          @address_data.attributes.merge(id: @address_data.id),
+          @official_data.attributes.merge(id: @official_data.id)
+        ])
+        solr.commit
+  
+        # Clear session data after successful submission
+        session[:form_data] = nil
+        session[:address_data] = nil
+        session[:official_data] = nil
+  
+        redirect_to root_path, notice: "Form submitted successfully!"
+      else
+        # Handle save errors
+        render :official
+      end
     else
       render :official
     end
   end
+  
+
 
   private
+  def search_solr(query)
+    puts "Searching"
+    solr = RSolr.connect(url: 'http://localhost:8983/solr/forms')
+    puts solr.get('select', params: { q: query })
+    response = solr.get('select', params: { q: query })
+    puts response
+    docs = response['response']['docs']
+    puts docs
+    return docs
+  rescue RSolr::Error::ConnectionRefused => e
+    return []
+  end
 
   def personal_params
     params.require(:form_datum).permit(
