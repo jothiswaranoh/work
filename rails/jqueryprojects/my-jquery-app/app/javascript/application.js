@@ -10,29 +10,34 @@ import "controllers"
  console.log("js")
 
 
- // Import jQuery as a module
-import jQuery from "jquery";
+// import jQuery from "jquery"
+//     {
+//     window.jQuery = jQuery;
+//     window.$ = jQuery;
+//    };
+import "jquery-blockui"
 
-async function myCustomFunction() {
-    // Your function code here
-    window.jQuery = jQuery;
-    window.$ = jQuery;
-    console.log("Custom function executed.");
-    
-  }
 
-  myCustomFunction().then(() => {
-    // Import file1.js after the custom function is executed
+
+// async function myCustomFunction() {
+//     // Your function code here
+//     window.jQuery = jQuery;
+//     window.$ = jQuery;
+//     console.log("Custom function executed.");
     
-      // Function that needs to be executed after file1.js is imported
-      function myFunction1() {
-        // Your function code here
-        console.log("Function 1 executed.");
-      }
+//   }
+//   myCustomFunction().then(() => {
+//     // Import file1.js after the custom function is executed
+    
+//       // Function that needs to be executed after file1.js is imported
+//       function myFunction1() {
+//         // Your function code here
+//         console.log("Function 1 executed.");
+//       }
   
-      // Call the function
-      myFunction1();
+//       // Call the function
+//       myFunction1();
       
-    });
+//     });
   
 
