@@ -1,0 +1,30 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  host: <%= ENV['POSTGRES_HOST'] || '172.17.0.3' %>
+  port: <%= ENV['POSTGRES_PORT'] || '5432' %>
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  username: Goths
+  password: jana
+
+
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: data # Replace 'my_database_name' with the desired database name
+  pool: 5
+  username: Goths          # Replace 'Goths' with the desired username
+  password: jana           # Replace 'jana' with the desired password
+  host: 172.17.0.3          # Use the IP address of your PostgreSQL container
+  port: 5432               # Port number of the PostgreSQL container (default is 5432)
+
+
+test:
+  <<: *default
+  database: your_app_name_test
+
+production:
+  <<: *default
+  database: your_app_name_production
+  username: your_production_db_username
+  password: your_production_db_password

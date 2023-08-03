@@ -1,0 +1,169 @@
+<div class="container-md text-light">
+  <main>
+    <div class="py-5 text-center">
+      <h2>Registration Form</h2>
+      <p class="lead">Please fill in the following details to register:</p>
+    </div>
+
+    <div class="row g-5 d-flex justify-content-center">
+      <div class="col-md-7 col-lg-8">
+        <% if @address_data.new_record? %>
+          <h4 class="mb-3">Personal Information</h4>
+          <%= form_with(model: @address_data, url: address_path, local: true) do |form| %>
+            <div class="row g-3">
+              <!-- New fields -->
+              <div class="col-12">
+                <%= form.label :door_number, class: "form-label" %>
+                <%= form.text_field :door_number, class: "form-control", placeholder: "Enter your door number" %>
+              </div>
+              <div class="col-12">
+                <%= form.label :floor_number, class: "form-label" %>
+                <%= form.text_field :floor_number, class: "form-control", placeholder: "Enter your floor number" %>
+              </div>
+              <div class="col-12">
+                <%= form.label :building_name, class: "form-label" %>
+                <%= form.text_field :building_name, class: "form-control", placeholder: "Enter your building name" %>
+              </div>
+              <div class="col-12">
+                <%= form.label :street_name, class: "form-label" %>
+                <%= form.text_field :street_name, class: "form-control", placeholder: "Enter your street name" %>
+              </div>
+              <div class="col-12">
+                <%= form.label :area, class: "form-label" %>
+                <%= form.text_field :area, class: "form-control", placeholder: "Enter your area" %>
+              </div>
+              <div class="col-12">
+                <%= form.label :post, class: "form-label" %>
+                <%= form.text_field :post, class: "form-control", placeholder: "Enter your post" %>
+              </div>
+              <div class="col-12">
+                <%= form.label :village_town, class: "form-label" %>
+                <%= form.text_field :village_town, class: "form-control", placeholder: "Enter your village/town" %>
+              </div>
+              <div class="col-12">
+                <%= form.label :pincode, class: "form-label" %>
+                <%= form.text_field :pincode, class: "form-control", placeholder: "Enter your pincode" %>
+              </div>
+              <div class="col-12">
+                <%= form.label :landmark, class: "form-label" %>
+                <%= form.text_field :landmark, class: "form-control", placeholder: "Enter your landmark" %>
+              </div>
+              <div class="col-12">
+                <%= form.label :city, class: "form-label" %>
+                <%= form.text_field :city, class: "form-control", placeholder: "Enter your city" %>
+              </div>
+              <div class="col-12">
+                <%= form.label :district, class: "form-label" %>
+                <%= form.text_field :district, class: "form-control", placeholder: "Enter your district" %>
+              </div>
+              <div class="col-12">
+                <%= form.label :state, class: "form-label" %>
+                <%= form.text_field :state, class: "form-control", placeholder: "Enter your state" %>
+              </div>
+              <div class="col-12">
+                <%= form.label :country, class: "form-label" %>
+                <%= form.text_field :country, class: "form-control", placeholder: "Enter your country" %>
+              </div>
+              <div class="col-12">
+                <%= form.label :continent, class: "form-label" %>
+                <%= form.text_field :continent, class: "form-control", placeholder: "Enter your continent" %>
+              </div>
+              <div class="col-12">
+                <%= form.label :current_address, class: "form-label" %>
+                <%= form.text_field :current_address, class: "form-control", placeholder: "Enter your current address" %>
+              </div>
+              <!-- End of new fields -->
+            </div>
+
+            <div class="col-12">
+
+             <div class="container text-center">
+                <%= form.submit 'Next', class: "btn btn-warning btn-block m-5" %>
+          
+                <%= link_to "Back", personal_path, class: "btn btn-secondary  ml-3" %>
+                 </div>
+             </div>
+          </div>
+          <% end %>
+        <% else %>
+          <h4 class="mb-3">Personal Information</h4>
+          <%= form_with(model: @address_data, url: address_path, local: true) do |form| %>
+            <div class="row g-3">
+              <!-- Existing fields with data -->
+              <div class="col-12">
+                <%= form.label :door_number, class: "form-label" %>
+                <%= form.text_field :door_number, class: "form-control", placeholder: "Enter your door number", value: @address_data.door_number %>
+              </div>
+              <div class="col-12">
+                <%= form.label :floor_number, class: "form-label" %>
+                <%= form.text_field :floor_number, class: "form-control", placeholder: "Enter your floor number", value: @address_data.floor_number %>
+              </div>
+              <div class="col-12">
+                <%= form.label :building_name, class: "form-label" %>
+                <%= form.text_field :building_name, class: "form-control", placeholder: "Enter your building name", value: @address_data.building_name %>
+              </div>
+              <div class="col-12">
+                <%= form.label :street_name, class: "form-label" %>
+                <%= form.text_field :street_name, class: "form-control", placeholder: "Enter your street name", value: @address_data.street_name %>
+              </div>
+              <div class="col-12">
+                <%= form.label :area, class: "form-label" %>
+                <%= form.text_field :area, class: "form-control", placeholder: "Enter your area", value: @address_data.area %>
+              </div>
+              <div class="col-12">
+                <%= form.label :post, class: "form-label" %>
+                <%= form.text_field :post, class: "form-control", placeholder: "Enter your post", value: @address_data.post %>
+              </div>
+              <div class="col-12">
+                <%= form.label :village_town, class: "form-label" %>
+                <%= form.text_field :village_town, class: "form-control", placeholder: "Enter your village/town", value: @address_data.village_town %>
+              </div>
+              <div class="col-12">
+                <%= form.label :pincode, class: "form-label" %>
+                <%= form.text_field :pincode, class: "form-control", placeholder: "Enter your pincode", value: @address_data.pincode %>
+              </div>
+              <div class="col-12">
+                <%= form.label :landmark, class: "form-label" %>
+                <%= form.text_field :landmark, class: "form-control", placeholder: "Enter your landmark", value: @address_data.landmark %>
+              </div>
+              <div class="col-12">
+                <%= form.label :city, class: "form-label" %>
+                <%= form.text_field :city, class: "form-control", placeholder: "Enter your city", value: @address_data.city %>
+              </div>
+              <div class="col-12">
+                <%= form.label :district, class: "form-label" %>
+                <%= form.text_field :district, class: "form-control", placeholder: "Enter your district", value: @address_data.district %>
+              </div>
+              <div class="col-12">
+                <%= form.label :state, class: "form-label" %>
+                <%= form.text_field :state, class: "form-control", placeholder: "Enter your state", value: @address_data.state %>
+              </div>
+              <div class="col-12">
+                <%= form.label :country, class: "form-label" %>
+                <%= form.text_field :country, class: "form-control", placeholder: "Enter your country", value: @address_data.country %>
+              </div>
+              <div class="col-12">
+                <%= form.label :continent, class: "form-label" %>
+                <%= form.text_field :continent, class: "form-control", placeholder: "Enter your continent", value: @address_data.continent %>
+              </div>
+              <div class="col-12">
+                <%= form.label :current_address, class: "form-label" %>
+                <%= form.text_field :current_address, class: "form-control", placeholder: "Enter your current address", value: @address_data.current_address %>
+              </div>
+              <!-- End of existing fields -->
+            </div>
+
+            <div class="col-12">
+
+             <div class="container text-center">
+                <%= form.submit 'Next', class: "btn btn-warning btn-block m-5" %>
+          
+                <%= link_to "Back", personal_path, class: "btn btn-secondary  ml-3" %>
+                 </div>
+             </div>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </main>
+</div>

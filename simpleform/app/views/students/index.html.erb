@@ -1,0 +1,27 @@
+<!-- app/views/students/index.html.erb -->
+
+<h1>All Students</h1>
+<% if @students.any? %>
+  <table>
+    <thead>
+      <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Class</th>
+        <th>Email</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @students.each do |student| %>
+        <tr>
+          <td><%= student.first_name %></td>
+          <td><%= student.last_name %></td>
+          <td><%= student.student_class %></td>
+          <td><%= student.email %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% else %>
+  <p>No students found.</p>
+<% end %>

@@ -1,0 +1,49 @@
+<div class="s132">
+<%= form_tag(products_search_path, method: :get, class: "search-form") do %>
+    <div class="inner-form">
+      <div class="input-group">
+        <%= text_field_tag(:query, params[:query], class: "form-control", placeholder: "Enter Keywords") %>
+        <%= submit_tag('Search', class: "btn btn-primary") %>
+      </div>
+      <div class="input-field third-wrap m-5">
+      <%= link_to personal_path do %>
+        <button class="btn-search btn-warning" type="button">Add form</button>
+      <% end %>
+    </div>
+    </div>
+  <% end %>
+
+
+  <div class="search-results m-5 text-white p-5">
+    <% if @results.any? %>
+      <h3>Search Results:</h3>
+      <ul>
+        <% @results.each do |result| %>
+          <li>
+            <strong>Company:</strong> <%= result['company'].first %>
+            <br>
+            <strong>Role:</strong> <%= result['role'].first %>
+          </li>
+        <% end %>
+      </ul>
+    <% else %>
+      <p>No results found.</p>
+    <% end %>
+  </div>
+</div>
+
+
+
+
+    
+    <div class="space"></div>
+
+    <div class="input-field third-wrap">
+    <%= link_to personal_path do %>
+      <button class="btn-search" type="button">Add form</button>
+    <% end %>
+  </div>
+  
+  </div>
+</form>
+</div>

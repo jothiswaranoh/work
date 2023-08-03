@@ -1,0 +1,13 @@
+
+<%= form_with model: @message, url: messages_path, local: true do |form| %>
+  <%= form.label :title %>
+  <%= form.text_field :title %>
+
+  <%= form.label :content %>
+  <%= form.text_area :content %>
+
+  <!-- File input for multiple image uploads -->
+  <%= form.file_field :images, multiple: true %>
+
+  <%= form.submit %>
+<% end %>

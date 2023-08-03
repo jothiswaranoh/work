@@ -1,0 +1,13 @@
+
+<h1><%= @message.title %></h1>
+<p><%= @message.content %></p>
+
+<% if @message.images.attached? %>
+  <div>
+    <% @message.images.each do |image| %>
+      <%= image_tag image %>
+    <% end %>
+  </div>
+<% else %>
+  <p>No images attached.</p>
+<% end %>
