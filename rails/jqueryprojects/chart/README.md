@@ -14,10 +14,11 @@ Highcharts is a widely used charting library that allows developers to create in
 To get started with Highcharts, follow these steps:
 
 1. **Installation**: Install Highcharts in your project using npm or include the Highcharts script in your HTML file.
+2. ``` bin/importmap pin highcharts --download ```
 
-2. **Creating a Chart**: Create a container in your HTML file where you want the chart to appear. Then, write JavaScript code to configure and render the chart.
+3. **Creating a Chart**: Create a container in your HTML file where you want the chart to appear. Then, write JavaScript code to configure and render the chart.
 
-3. **Chart Configuration**: Highcharts offers various configuration options like chart type, title, labels, tooltips, animation, and more. Experiment with these options to customize your charts.
+4. **Chart Configuration**: Highcharts offers various configuration options like chart type, title, labels, tooltips, animation, and more. Experiment with these options to customize your charts.
 
 ## Examples
 
