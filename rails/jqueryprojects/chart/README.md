@@ -33,7 +33,7 @@ In this repository, you'll find examples of different chart types:
 - Scatter Plot
 - Bubble Chart
 
-'''
+```
 
 <script>
   Highcharts.chart('chartContainer', {
@@ -51,8 +51,102 @@ In this repository, you'll find examples of different chart types:
   });
 </script>
 
-'''
+```
+# Stimulus.js Simple Documentation
 
-Each example includes the necessary code to create the chart. Feel free to explore these examples to understand how to implement various types of charts.
+Stimulus.js is a small JavaScript framework designed to provide interactivity to your HTML components using data attributes. It allows you to easily add behavior to your HTML elements without the need for complex JavaScript code.
 
+## Getting Started
 
+To use Stimulus.js, follow these steps:
+
+1. Include the Stimulus library in your HTML file:
+
+```html
+<script src="https://unpkg.com/stimulus/dist/stimulus.umd.js"></script>
+```
+
+2. Create a Stimulus controller by extending `Stimulus.Controller`:
+
+```javascript
+class MyController extends Stimulus.Controller {
+  // Controller logic goes here
+}
+```
+
+3. Define targets and actions:
+
+```html
+<div data-controller="my">
+  <input type="text" data-target="my.name">
+  <button data-action="click->my.greet">Say Hello</button>
+</div>
+```
+
+4. Add behavior to your controller:
+
+```javascript
+class MyController extends Stimulus.Controller {
+  static targets = ["name"];
+
+  greet() {
+    const name = this.nameTarget.value || "World";
+    alert(`Hello, ${name}!`);
+  }
+}
+```
+
+5. Initialize Stimulus:
+
+```javascript
+const application = Stimulus.Application.start();
+application.register("my", MyController);
+```
+
+## Concepts
+
+### Controller
+
+A Stimulus controller is a JavaScript class that defines the behavior of a specific element. It extends `Stimulus.Controller` and may define targets and actions.
+
+### Targets
+
+Targets are elements referenced in the controller. You can use `static targets` to define them and access their values within the controller.
+
+### Actions
+
+Actions define the event handlers for the elements. They are written in the format `event->controller.method`, where `event` is the event to listen for, `controller` is the name of the controller, and `method` is the method to execute.
+
+## Example
+
+Let's create a simple example that greets the user when they click a button:
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Stimulus Example</title>
+  <script src="https://unpkg.com/stimulus/dist/stimulus.umd.js"></script>
+</head>
+<body>
+  <div data-controller="greeting">
+    <input type="text" data-target="greeting.name">
+    <button data-action="click->greeting.greet">Say Hello</button>
+  </div>
+
+  <script>
+    class GreetingController extends Stimulus.Controller {
+      static targets = ["name"];
+
+      greet() {
+        const name = this.nameTarget.value || "World";
+        alert(`Hello, ${name}!`);
+      }
+    }
+
+    const application = Stimulus.Application.start();
+    application.register("greeting", GreetingController);
+  </script>
+</body>
+</html>
+```
