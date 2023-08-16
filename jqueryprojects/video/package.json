@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "stimulus-notification": "^2.2.0",
+    "yarn": "^1.22.19"
+  }
+}

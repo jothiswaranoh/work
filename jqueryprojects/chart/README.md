@@ -33,7 +33,7 @@ In this repository, you'll find examples of different chart types:
 - Scatter Plot
 - Bubble Chart
 
-'''
+```
 
 <script>
   Highcharts.chart('chartContainer', {
@@ -51,8 +51,4 @@ In this repository, you'll find examples of different chart types:
   });
 </script>
 
-'''
-
-Each example includes the necessary code to create the chart. Feel free to explore these examples to understand how to implement various types of charts.
-
-
+```
