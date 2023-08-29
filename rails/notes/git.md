@@ -1,4 +1,3 @@
-Certainly, here's a simplified README file with commands and brief explanations for your actions:
 
 ```markdown
 # Project Repository README
@@ -21,9 +20,9 @@ git pull upstream main
 
 ### Step 3: Create a New Branch
 ```bash
-git checkout -b LM-28-D
+git checkout -b branchname
 ```
-- Create a new branch named 'LM-28-D' based on 'main'.
+- Create a new branch named 'branchname' based on 'main'.
 
 ### Step 4: Apply Stash
 ```bash
@@ -48,12 +47,10 @@ git commit -m "LM-28 solved datapicker and facet filter issue in plus and minus"
 
 ### Step 8: Push to Remote Repository
 ```bash
-git push origin LM-28-D
+git push origin branch name
 ```
-- Push the 'LM-28-D' branch to the remote repository.
+- Push the 'branch name' branch to the remote repository.
 
-For more detailed explanations and context, please refer to the complete documentation or project history.
 
 ```
 
-This README provides a high-level overview of the steps you've taken to resolve merge conflicts and push the 'LM-28-D' branch. You can include this in your project repository for quick reference by your team members.
