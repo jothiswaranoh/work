@@ -41,7 +41,7 @@ git add <file1> <file2> ...
 
 ### Step 7: Commit Changes
 ```bash
-git commit -m "LM-28 solved datapicker and facet filter issue in plus and minus"
+git commit -m "messages"
 ```
 - Commit the changes with a meaningful message.
 
