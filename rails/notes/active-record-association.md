@@ -1,5 +1,3 @@
-
-```markdown
 # Understanding Active Record Associations in Ruby on Rails
 
 In Ruby on Rails, associating models is essential for building web applications. This post provides a quick overview of Active Record Associations within the Ruby on Rails framework.
