@@ -1,8 +1,6 @@
-
-```markdown
 # Project Repository README
 
-## Resolving Merge Conflicts and Pushing Branch LM-28-D
+## **Making Pull Request(PR)**
 
 ### Step 1: Stash Local Changes
 ```bash
@@ -29,6 +27,7 @@ git checkout -b branchname
 git stash apply
 ```
 - Apply the stashed changes, which may cause merge conflicts.
+### if any error conflict occur then do this step 5.
 
 ### Step 5: Resolve Merge Conflicts
 - Manually edit conflicted files to resolve merge conflicts.
@@ -37,6 +36,7 @@ git stash apply
 ```bash
 git add <file1> <file2> ...
 ```
+or add using the visuval studio code
 - Stage the resolved changes for commit.
 
 ### Step 7: Commit Changes
