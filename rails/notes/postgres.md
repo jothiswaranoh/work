@@ -1,6 +1,4 @@
-Sure, here's a Markdown file containing the information I provided earlier:
 
-```markdown
 # Creating PostgreSQL User with Superuser Privileges
 
 To create a PostgreSQL user named "portal" with superuser privileges, follow these steps:
