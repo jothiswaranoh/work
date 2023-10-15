@@ -1,7 +1,6 @@
-# jQuery Basics
+# jquery and its basics
 
-### Hiding `<p>` Elements on Button Click
-
+## Hiding Elements on Button Click
 ```javascript
 $(document).ready(function() {
     $("button").click(function() {
@@ -15,7 +14,6 @@ This code hides the `<p>` elements when a button is clicked. You can use `#id` a
 ## jQuery Events
 
 ### Examples of jQuery Events
-
 ```javascript
 // Double click event
 $("element").dblclick(function() {
@@ -54,7 +52,6 @@ $("element").hover(
 ```
 
 ### Handling Multiple Events with `.on()`
-
 ```javascript
 // Using .on() to handle multiple events
 $("element").on("click mouseenter", function() {
@@ -83,21 +80,18 @@ $("element").one("click", function() {
 ## Animations in jQuery
 
 ### Hiding and Showing Elements
-
 ```javascript
 $("img").hide("slow"); // Hide image with a slow animation
 $("img").show("fast"); // Show image with a fast animation
 ```
 
 ### Sliding Elements
-
 ```javascript
 $("h1").slideUp(500); // Slide up an h1 element
 $("h1").slideDown(500); // Slide down an h1 element
 ```
 
 ### Using Fade Effects
-
 ```javascript
 // Using fade methods
 $("element").fadeOut(2000);
@@ -116,46 +110,83 @@ $("p").hide(500).delay(1000).show(300);
 ## DOM Manipulation using jQuery
 
 ### Retrieving and Changing Element Content
-
 ```javascript
 $("#btn").click(function() {
     console.log($("#test").text()); // Get and log the text inside an element
+    console.log($("#test").html()); // Get and log the HTML content inside an element
+    console.log($("#test").attr("href")); // Get and log the "href" attribute of an element
+    console.log($("#test").val()); // Get and log the value of an element
 });
-
-console.log($("#fcc").attr("href")); // Get and log the "href" attribute of an element
 ```
 
 ### Modifying Text Content with a Function
-
 ```javascript
 $("#btn2").click(function() {
-    $("p").text(function(i, origText) {
+    $("#test").text(function(i, origText) {
         return "Old text: " + origText + " New text: freeCodeCamp is awesome! (index: " + i + ")";
     });
 });
 ```
 
-### Animating Elements with Callbacks
-
+### Adding and Removing DOM Elements
 ```javascript
-$("#go").click(function() {
-    $("#block").animate({
-        opacity: 0.5,
-        marginLeft: "+=50",
-        height: "400px"
-    }, 3000, "linear", function() {
-        $(this).after("<div>Animation complete.</div>");
-    });
+$("#btn3").click(function() {
+    $("<p>Appended paragraph</p>").appendTo("body"); // Append a paragraph to the body
+    $("<p>Prepended paragraph</p>").prependTo("body"); // Prepend a paragraph to the body
+    $("<p>Before paragraph</p>").insertBefore("#target"); // Insert a paragraph before the target element
+    $("<p>After paragraph</p>").insertAfter("#target"); // Insert a paragraph after the target element
+    $("p").remove(); // Remove all paragraphs
+    $("#container").empty(); // Empty the content of the container
 });
+```
 
-$("#go").click(function() {
-    $("#block").animate({ 
-        width: "90%"
-    }, 1000)
-    .animate({
-        fontSize: "40px"
-    }, 1000)
-    .animate({
-        borderLeftWidth: "30px"
-    }, 1000);
+### Add and Remove CSS Classes
+```javascript
+$("#btn4").click(function() {
+    $("p").addClass("highlight"); // Add the 'highlight' class to all paragraphs
+    $("p").removeClass("highlight"); // Remove the 'highlight' class from all paragraphs
+});
+```
+
+### DOM Traversal - Finding Parent and Child Nodes
+```javascript
+$("li").parent().css({"color": "chocolate", "border": "2px solid chocolate"});
+$("li").parents().css({"color": "chocolate", "border": "2px solid chocolate"});
+$("li").parentsUntil("ul").css({"color": "chocolate", "border": "2px solid chocolate"});
+$("ul").children().css({"color": "chocolate", "border": "2px solid chocolate"});
+$("ul").find("li").css({"color": "chocolate", "border": "2px solid chocolate"});
+$("ul").find("*").css({"color": "chocolate", "border": "2px solid chocolate"});
+$("li").siblings().css({"color": "chocolate", "border": "2px solid chocolate"});
+$("li").next().css({"color": "chocolate", "border": "2px solid chocolate"});
+$("li").nextAll().css({"color": "chocolate", "border": "2px solid chocolate"});
+$("li").nextUntil("li:last").css({"color": "ch
+
+ocolate", "border": "2px solid chocolate"});
+```
+
+## AJAX in jQuery
+
+### Sending POST Request with `$.post`
+```javascript
+function loadDoc() {
+    $.post("https://cors-anywhere.herokuapp.com/http://carnes.cc/code/ajax_example.txt", {
+        name: "Beau Carnes",
+        city: "Grand Rapids"
+    }, function(data, status) {
+        console.log("Data: " + data + "\nStatus: " + status);
+    });
+}
+```
+
+### Using `$.ajax` for More Control
+```javascript
+$.ajax('https://some.url', {
+    success: (data) => {
+        // Handle the response data in the success callback
+        console.log("Data: " + data);
+    },
+    error: (xhr, status, error) => {
+        // Handle errors
+        console.log("Error: " + xhr.status + ": " + xhr.statusText);
+    }
 });
