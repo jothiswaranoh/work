@@ -1,0 +1,32 @@
+<!-- app/views/suppliers/index.html.erb -->
+
+<h1>Suppliers</h1>
+
+<% if @suppliers.any? %>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Address</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @suppliers.each do |supplier| %>
+        <tr>
+          <td><%= supplier.name %></td>
+          <td><%= supplier.address %></td>
+          <td>
+            <%= link_to "View", supplier_path(supplier) %>
+            <%= link_to "Edit", edit_supplier_path(supplier) %>
+            <%= link_to "Delete", supplier_path(supplier), method: :delete, data: { confirm: "Are you sure?" } %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% else %>
+  <p>No suppliers available.</p>
+<% end %>
+
+<%= link_to "New Supplier", new_supplier_path %>

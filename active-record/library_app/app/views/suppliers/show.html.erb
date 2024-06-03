@@ -1,0 +1,14 @@
+<!-- app/views/suppliers/show.html.erb -->
+
+<h1>Supplier Details</h1>
+
+<dl>
+  <dt>Name:</dt>
+  <dd><%= @supplier.name %></dd>
+
+  <dt>Address:</dt>
+  <dd><%= @supplier.address %></dd>
+</dl>
+
+<%= link_to "Edit Supplier", edit_supplier_path(@supplier) %>
+<%= link_to "Back to Suppliers", suppliers_path %>

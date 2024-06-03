@@ -1,0 +1,3 @@
+deal_name,deal_type,execution_date,term_start_date,term_end_date,grantor_legal_name,grantee_legal_name,grantor_entity,grantee_entity,deal_notes,business_unit,broker_name,fee_type,fee_thousands_usd,Referring Section,fee_notes,deal_lead,legal_lead
+Deal Test 1,6c7e3200049198face0d2648e9d1a27d,,2024-02-19 00:00:00 +0530,,Apple Inc. and Affliiates,RPX Corporation ,22114a47872b1407e6bec01d58a2a0f1,d41d8cd98f00b204e9800998ecf8427e,,,,,,,,,
+Deal Test 3,6c7e3200049198face0d2648e9d1a27d,,2024-02-19 00:00:00 +0530,,Apple Inc. and Affliiates,RPX Corporation ,22114a47872b1407e6bec01d58a2a0f1,d41d8cd98f00b204e9800998ecf8427e,,,,,,,,,

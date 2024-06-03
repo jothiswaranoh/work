@@ -1,0 +1,16 @@
+<table id="sortable-table" data-behavior="drag_drop">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @items.each do |item| %>
+      <tr data-item-id="<%= item.id %>">
+        <td><%= item.name %></td>
+        <td><%= item.description %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

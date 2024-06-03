@@ -1,0 +1,12 @@
+<h1>Account Details</h1>
+
+<dl>
+  <dt>Name:</dt>
+  <dd><%= @account.name %></dd>
+
+  <dt>Supplier:</dt>
+  <dd><%= @account.supplier.name %></dd>
+</dl>
+
+<%= link_to "Edit Account", edit_account_path(@account) %>
+<%= link_to "Back to Accounts", accounts_path %>

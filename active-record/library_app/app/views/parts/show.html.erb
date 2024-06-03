@@ -1,0 +1,14 @@
+<!-- app/views/parts/show.html.erb -->
+
+<h1>Part Details</h1>
+
+<dl>
+  <dt>Name:</dt>
+  <dd><%= @part.name %></dd>
+
+  <dt>Description:</dt>
+  <dd><%= @part.description %></dd>
+</dl>
+
+<%= link_to "Edit Part", edit_part_path(@part) %>
+<%= link_to "Back to Parts", parts_path %>

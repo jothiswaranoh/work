@@ -1,0 +1,12 @@
+<h1>Book Details</h1>
+
+<dl>
+  <dt>Title:</dt>
+  <dd><%= @book.title %></dd>
+  
+  <dt>Author:</dt>
+  <dd><%= @book.author.name %></dd>
+</dl>
+
+<%= link_to "Edit", edit_author_book_path(@book.author, @book) %>
+<%= link_to "Back to Books", author_books_path(@book.author) %>

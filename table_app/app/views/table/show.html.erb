@@ -1,0 +1,23 @@
+<h1>Records Table</h1>
+<%= link_to "Sort by Start Date (Asc)", table_index_path(sort: 'asc'), class: 'btn btn-primary' %>
+<%= link_to "Sort by Start Date (Desc)", table_index_path(sort: 'desc'), class: 'btn btn-primary' %>
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Start Date</th>
+      <th>End Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @records.each do |record| %>
+      <tr>
+        <td><%= record['id'] %></td>
+        <td><%= record['name'] %></td>
+        <td><%= record['start_date'] %></td>
+        <td><%= record['end_date']   %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

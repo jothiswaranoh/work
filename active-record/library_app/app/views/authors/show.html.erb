@@ -1,0 +1,16 @@
+<h1><%= @author.name %></h1>
+
+<% if @author.books.any? %>
+  <h2>Books by <%= @author.name %></h2>
+  <ul>
+    <% @author.books.each do |book| %>
+      <li><%= link_to book.title, author_book_path(author_id: @author.id, id: book.id) %></li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>No books by this author.</p>
+<% end %>
+
+<%= link_to "Edit Author", edit_author_path(@author) %>
+<%= link_to "Back to Authors", authors_path %>
+<%= link_to "Add Book", new_author_book_path(@author) %>

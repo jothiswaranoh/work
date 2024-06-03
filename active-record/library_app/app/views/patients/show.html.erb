@@ -1,0 +1,14 @@
+<!-- app/views/patients/show.html.erb -->
+
+<h1>Patient Details</h1>
+
+<dl>
+  <dt>Name:</dt>
+  <dd><%= @patient.name %></dd>
+
+  <dt>Date of Birth:</dt>
+  <dd><%= @patient.date_of_birth %></dd>
+</dl>
+
+<%= link_to "Edit Patient", edit_patient_path(@patient) %>
+<%= link_to "Back to Patients", patients_path %>

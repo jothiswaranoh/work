@@ -1,0 +1,32 @@
+<!-- app/views/assemblies/index.html.erb -->
+
+<h1>Assemblies</h1>
+
+<% if @assemblies.any? %>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @assemblies.each do |assembly| %>
+        <tr>
+          <td><%= assembly.name %></td>
+          <td><%= assembly.description %></td>
+          <td>
+            <%= link_to "View", assembly_path(assembly) %>
+            <%= link_to "Edit", edit_assembly_path(assembly) %>
+            <%= link_to "Delete", assembly_path(assembly), method: :delete, data: { confirm: "Are you sure?" } %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% else %>
+  <p>No assemblies available.</p>
+<% end %>
+
+<%= link_to "New Assembly", new_assembly_path %>

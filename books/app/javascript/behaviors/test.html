@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  table th,
+  table td {
+    width: 50px;
+    padding: 5px;
+    border: 0.5px solid black;
+  }
+
+  .GFG {
+    color: green;
+  }
+
+  .OK {
+    font-size: 18px;
+  }
+  .select{
+    background-color: red;
+  }
+</style>
+
+<body>
+  <h2 class="GFG">GeeksForGeeks</h2>
+  <p class="OK">Drag and Drop table column</p>
+  <table id="GFG">
+    <tr>
+      <th>ID</th>
+      <th>Language</th>
+      <th>Preference</th>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>Java</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>C++</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>Python</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>HTML</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>CSS</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>Javascript</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td>MySql</td>
+      <td>7</td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td>PHP</td>
+      <td>8</td>
+    </tr>
+  </table>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.24/themes/smoothness/jquery-ui.css" />
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.24/jquery-ui.min.js"></script>
+  <script>
+    $(function () {
+      $("th:not(:first-child)").draggable({
+        axis: 'x',
+        containment: 'parent',
+        helper: 'clone',
+        start: function (e, ui) {
+          ui.helper.addClass("select");
+        },
+        stop: function (e, ui) {
+          ui.helper.removeClass("select");
+        }
+      });
+
+      $("th").droppable({
+        drop: function (event, ui) {
+          var $dragElem = ui.draggable;
+          var $dropElem = $(this);
+          var dragIndex = $dragElem.index();
+          var dropIndex = $dropElem.index();
+          $("tr").each(function () {
+            var $dragTd = $(this).find("td").eq(dragIndex);
+            var $dropTd = $(this).find("td").eq(dropIndex);
+            var dragText = $dragTd.text();
+            var dropText = $dropTd.text();
+            $dragTd.text(dropText);
+            $dropTd.text(dragText);
+          });
+          // Update the text of the dropped th element
+          var dragText = $dragElem.text();
+          var dropText = $dropElem.text();
+          $dragElem.text(dropText);
+          $dropElem.text(dragText);
+        }
+      });
+    });
+  </script>
+</body>
+
+</html>

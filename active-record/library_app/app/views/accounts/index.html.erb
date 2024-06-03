@@ -1,0 +1,30 @@
+<h1>Accounts</h1>
+
+<% if @accounts.any? %>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Supplier</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @accounts.each do |account| %>
+        <tr>
+          <td><%= account.name %></td>
+          <td><%= account.supplier.name %></td>
+          <td>
+            <%= link_to "View", account_path(account) %>
+            <%= link_to "Edit", edit_account_path(account) %>
+            <%= link_to "Delete", account_path(account), method: :delete, data: { confirm: "Are you sure?" } %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% else %>
+  <p>No accounts available.</p>
+<% end %>
+
+<%= link_to "New Account", new_account_path %>

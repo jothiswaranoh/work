@@ -1,0 +1,32 @@
+<!-- app/views/products/index.html.erb -->
+
+<h1>Products</h1>
+
+<% if @products.any? %>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @products.each do |product| %>
+        <tr>
+          <td><%= product.name %></td>
+          <td><%= product.description %></td>
+          <td>
+            <%= link_to "View", product_path(product) %>
+            <%= link_to "Edit", edit_product_path(product) %>
+            <%= link_to "Delete", product_path(product), method: :delete, data: { confirm: "Are you sure?" } %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% else %>
+  <p>No products available.</p>
+<% end %>
+
+<%= link_to "New Product", new_product_path %>

@@ -1,0 +1,19 @@
+<h1>Welcome to Your Dashboard</h1>
+
+<ul>
+  <li><%= link_to "Authors", authors_path %></li>
+  <li><%= link_to "Books", author_books_path(author_id: Author.first.id) %></li>
+
+  <li><%= link_to "Suppliers", suppliers_path %></li>
+  <li><%= link_to "Accounts", accounts_path %></li>
+  <li><%= link_to "Account Histories", account_histories_path %></li>
+  <li><%= link_to "Physicians", physicians_path %></li>
+  <% if Physician.any? %>
+  <li><%= link_to "Appointments", physician_appointments_path(physician_id: Physician.first.id) %></li>
+<% else %>
+  <li><%= link_to "Appointments", "#" %></li>
+<% end %>
+  <li><%= link_to "Patients", patients_path %></li>
+  <li><%= link_to "Assemblies", assemblies_path %></li>
+  <li><%= link_to "Products", products_path %></li>
+</ul>

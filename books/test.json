@@ -1,0 +1,139 @@
+{
+  "deals": [
+    {
+      "Deal Name": "Deal Test 1",
+      "Deal Type": "Inbound",
+      "Execution Date": null,
+      "Term Start Date": "2024-02-19 00:00:00 +0530",
+      "Term End Date": null,
+      "Grantor Legal Name": "Apple Inc. and Affliiates",
+      "Grantee Legal Name": "RPX Corporation ",
+      "Grantor Entity": "RPX Test",
+      "Grantee Entity": null,
+      "Deal Notes": null,
+      "Business Unit": null,
+      "Broker Name": null,
+      "Fee Type": null,
+      "Fee(In Thousands $ USD)": null,
+      "Referring Section": null,
+      "Fee Notes": null,
+      "Deal Lead": null,
+      "Legal Lead": null
+    },
+    {
+      "Deal Name": "Deal Test 3",
+      "Deal Type": "Inbound",
+      "Execution Date": null,
+      "Term Start Date": "2024-02-19 00:00:00 +0530",
+      "Term End Date": null,
+      "Grantor Legal Name": "Apple Inc. and Affliiates",
+      "Grantee Legal Name": "RPX Corporation ",
+      "Grantor Entity": "RPX Test",
+      "Grantee Entity": null,
+      "Deal Notes": null,
+      "Business Unit": null,
+      "Broker Name": null,
+      "Fee Type": null,
+      "Fee(In Thousands $ USD)": null,
+      "Referring Section": null,
+      "Fee Notes": null,
+      "Deal Lead": null,
+      "Legal Lead": null
+    }
+  ],
+  "rights": [
+    {
+      "Right Name": "Custom right 1",
+      "Right Start Date": "2024-03-13 00:00:00 +0530",
+      "Right End Date": "2024-03-28 00:00:00 +0530",
+      "Field of Use": null,
+      "Referring Section": null,
+      "Notes": null,
+      "Deal Name": "Deal Test 2",
+      "": null
+    },
+    {
+      "Right Name": "Right to sublicense",
+      "Right Start Date": "2024-03-13 00:00:00 +0530",
+      "Right End Date": "2024-03-28 00:00:00 +0530",
+      "Field of Use": null,
+      "Referring Section": null,
+      "Notes": null,
+      "Deal Name": "Deal Test 1",
+      "": null
+    },
+    {
+      "Right Name": "Ownership",
+      "Right Start Date": "2024-03-28 00:00:00 +0530",
+      "Right End Date": "2024-03-28 00:00:00 +0530",
+      "Field of Use": null,
+      "Referring Section": null,
+      "Notes": null,
+      "Deal Name": "Deal Test 2",
+      "": null
+    },
+    {
+      "Right Name": "Custom right 2",
+      "Right Start Date": "2024-03-28 00:00:00 +0530",
+      "Right End Date": "2024-03-28 00:00:00 +0530",
+      "Field of Use": null,
+      "Referring Section": null,
+      "Notes": null,
+      "Deal Name": "Deal Test 1",
+      "": null
+    }
+  ],
+  "restrictions": [],
+  "assets": [
+    {
+      "Portfolio": "Mysensors",
+      "Asset Number": "RU2720323C1",
+      "Title": null,
+      "Filing Date": null,
+      "Custom right 1": "TRUE",
+      "Right to Sublicense": "FALSE",
+      "Custom Restriction": "FALSE",
+      "Deal Name": "Deal Test 1"
+    },
+    {
+      "Portfolio": "Mysensors",
+      "Asset Number": "CN211412610U",
+      "Title": null,
+      "Filing Date": null,
+      "Custom right 1": "TRUE",
+      "Right to Sublicense": "FALSE",
+      "Custom Restriction": "FALSE",
+      "Deal Name": "Deal Test 1"
+    },
+    {
+      "Portfolio": "Mysensors",
+      "Asset Number": "CN211412610U",
+      "Title": null,
+      "Filing Date": null,
+      "Custom right 1": "TRUE",
+      "Right to Sublicense": "FALSE",
+      "Custom Restriction": "FALSE",
+      "Deal Name": "Deal Test 1"
+    },
+    {
+      "Portfolio": "Mysensors",
+      "Asset Number": "RU2735986C1",
+      "Title": null,
+      "Filing Date": null,
+      "Custom right 1": "TRUE",
+      "Right to Sublicense": "FALSE",
+      "Custom Restriction": "FALSE",
+      "Deal Name": "Deal Test 1"
+    },
+    {
+      "Portfolio": "Gesturecontrol",
+      "Asset Number": "US6941239B2",
+      "Title": null,
+      "Filing Date": null,
+      "Custom right 1": "FALSE",
+      "Right to Sublicense": "TRUE",
+      "Custom Restriction": "FALSE",
+      "Deal Name": "Deal Test 1"
+    }
+  ]
+}

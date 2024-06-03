@@ -1,0 +1,15 @@
+<h1>Account History Details</h1>
+
+<dl>
+  <dt>Date:</dt>
+  <dd><%= @account_history.date.strftime("%Y-%m-%d") %></dd>
+
+  <dt>Description:</dt>
+  <dd><%= @account_history.description %></dd>
+
+  <dt>Amount:</dt>
+  <dd><%= number_to_currency(@account_history.amount) %></dd>
+</dl>
+
+<%= link_to "Edit Account History", edit_account_history_path(@account_history) %>
+<%= link_to "Back to Account Histories", account_histories_path %>

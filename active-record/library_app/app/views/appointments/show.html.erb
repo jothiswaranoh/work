@@ -1,0 +1,17 @@
+<!-- app/views/appointments/show.html.erb -->
+
+<h1>Appointment Details</h1>
+
+<dl>
+  <dt>Physician:</dt>
+  <dd><%= @appointment.physician.name %></dd>
+
+  <dt>Patient:</dt>
+  <dd><%= @appointment.patient.name %></dd>
+
+  <dt>Date:</dt>
+  <dd><%= @appointment.date %></dd>
+</dl>
+
+<%= link_to "Edit Appointment", edit_appointment_path(@appointment) %>
+<%= link_to "Back to Appointments", appointments_path %>

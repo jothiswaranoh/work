@@ -1,0 +1,14 @@
+<!-- app/views/physicians/show.html.erb -->
+
+<h1>Physician Details</h1>
+
+<dl>
+  <dt>Name:</dt>
+  <dd><%= @physician.name %></dd>
+
+  <dt>Specialty:</dt>
+  <dd><%= @physician.specialty %></dd>
+</dl>
+
+<%= link_to "Edit Physician", edit_physician_path(@physician) %>
+<%= link_to "Back to Physicians", physicians_path %>

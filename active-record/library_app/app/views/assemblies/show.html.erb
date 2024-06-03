@@ -1,0 +1,14 @@
+<!-- app/views/assemblies/show.html.erb -->
+
+<h1>Assembly Details</h1>
+
+<dl>
+  <dt>Name:</dt>
+  <dd><%= @assembly.name %></dd>
+
+  <dt>Description:</dt>
+  <dd><%= @assembly.description %></dd>
+</dl>
+
+<%= link_to "Edit Assembly", edit_assembly_path(@assembly) %>
+<%= link_to "Back to Assemblies", assemblies_path %>

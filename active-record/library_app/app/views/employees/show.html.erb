@@ -1,0 +1,14 @@
+<!-- app/views/employees/show.html.erb -->
+
+<h1>Employee Details</h1>
+
+<dl>
+  <dt>Name:</dt>
+  <dd><%= @employee.name %></dd>
+
+  <dt>Department:</dt>
+  <dd><%= @employee.department %></dd>
+</dl>
+
+<%= link_to "Edit Employee", edit_employee_path(@employee) %>
+<%= link_to "Back to Employees", employees_path %>

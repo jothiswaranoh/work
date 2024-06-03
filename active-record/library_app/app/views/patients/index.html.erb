@@ -1,0 +1,32 @@
+<!-- app/views/patients/index.html.erb -->
+
+<h1>Patients</h1>
+
+<% if @patients.any? %>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Date of Birth</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @patients.each do |patient| %>
+        <tr>
+          <td><%= patient.name %></td>
+          <td><%= patient.date_of_birth %></td>
+          <td>
+            <%= link_to "View", patient_path(patient) %>
+            <%= link_to "Edit", edit_patient_path(patient) %>
+            <%= link_to "Delete", patient_path(patient), method: :delete, data: { confirm: "Are you sure?" } %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% else %>
+  <p>No patients available.</p>
+<% end %>
+
+<%= link_to "New Patient", new_patient_path %>

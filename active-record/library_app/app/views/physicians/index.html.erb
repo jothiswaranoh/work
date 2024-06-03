@@ -1,0 +1,32 @@
+<!-- app/views/physicians/index.html.erb -->
+
+<h1>Physicians</h1>
+
+<% if @physicians.any? %>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Specialty</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @physicians.each do |physician| %>
+        <tr>
+          <td><%= physician.name %></td>
+          <td><%= physician.specialty %></td>
+          <td>
+            <%= link_to "View", physician_path(physician) %>
+            <%= link_to "Edit", edit_physician_path(physician) %>
+            <%= link_to "Delete", physician_path(physician), method: :delete, data: { confirm: "Are you sure?" } %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% else %>
+  <p>No physicians available.</p>
+<% end %>
+
+<%= link_to "New Physician", new_physician_path %>

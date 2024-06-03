@@ -1,0 +1,16 @@
+<h1>Authors</h1>
+
+<% if @authors.any? %>
+  <ul>
+    <% @authors.each do |author| %>
+      <li>
+        <%= link_to author.name, author_path(author) %>
+        (<%= pluralize(author.books.count, "book") %>)
+      </li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>No authors available.</p>
+<% end %>
+
+<%= link_to "New Author", new_author_path %>

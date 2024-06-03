@@ -1,0 +1,32 @@
+<!-- app/views/parts/index.html.erb -->
+
+<h1>Parts</h1>
+
+<% if @parts.any? %>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @parts.each do |part| %>
+        <tr>
+          <td><%= part.name %></td>
+          <td><%= part.description %></td>
+          <td>
+            <%= link_to "View", part_path(part) %>
+            <%= link_to "Edit", edit_part_path(part) %>
+            <%= link_to "Delete", part_path(part), method: :delete, data: { confirm: "Are you sure?" } %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% else %>
+  <p>No parts available.</p>
+<% end %>
+
+<%= link_to "New Part", new_part_path %>

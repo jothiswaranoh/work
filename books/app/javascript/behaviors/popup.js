@@ -1,0 +1,2 @@
+JPX.Behaviors.popup = function () {
+};

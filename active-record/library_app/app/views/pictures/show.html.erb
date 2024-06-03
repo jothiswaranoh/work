@@ -1,0 +1,17 @@
+<!-- app/views/pictures/show.html.erb -->
+
+<h1>Picture Details</h1>
+
+<dl>
+  <dt>Title:</dt>
+  <dd><%= @picture.title %></dd>
+
+  <dt>Imageable Type:</dt>
+  <dd><%= @picture.imageable_type %></dd>
+
+  <dt>Imageable:</dt>
+  <dd><%= @picture.imageable.name if @picture.imageable %></dd>
+</dl>
+
+<%= link_to "Edit Picture", edit_picture_path(@picture) %>
+<%= link_to "Back to Pictures", pictures_path %>
